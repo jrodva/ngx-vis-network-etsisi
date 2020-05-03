@@ -4,7 +4,7 @@
 
 Overall:
 
-At this repository we have 2 important projects:
+At this repository, we have 2 important projects:
 
 - ngx-vis-network-etsisi
 
