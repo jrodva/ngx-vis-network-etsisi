@@ -3,13 +3,27 @@
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "run-s lint style-lint serve",
     "build": "ng build",
     "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "lint": "ng lint --format=stylish",
+    "lint:fix": "ng lint --fix=true",
+    "style-lint": "stylelint '{projects/**/src/**/*.scss, projects/**/src/**/**/*.scss}' --config .stylelintrc.json",
+    "style-lint:fix": "stylelint '{projects/**/src/**/*.scss, projects/**/src/**/**/*.scss}' --fix",
+    "format:check": "prettier --list-different 'projects/**/*.ts'",
+    "format:write": "prettier --write 'projects/**/*.ts'",
+    "e2e": "ng e2e",
+    "compodoc": "./node_modules/.bin/compodoc -p projects/ngx-network-vis/tsconfig.lib.json"
   },
-  "private": true,
+  "peerDependencies": {
+    "@angular/common": ">=8.0.0 || >=9.0.0",
+    "@angular/core": ">=8.0.0 || >=9.0.0",
+    "@angular/compiler": ">=8.0.0 || >=9.0.0",
+    "keycharm": "^0.3.1",
+    "vis-data": "^6.3.1",
+    "vis-util": "^2.0.2",
+    "moment": "^2.24.0"
+  },
   "dependencies": {
     "@angular/animations": "~8.2.14",
     "@angular/common": "~8.2.14",
@@ -21,6 +35,7 @@
     "@angular/router": "~8.2.14",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
+    "vis-network": "^6.5.2",
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
@@ -29,10 +44,13 @@
     "@angular/cli": "~8.3.21",
     "@angular/compiler-cli": "~8.2.14",
     "@angular/language-service": "~8.2.14",
-    "@types/node": "~8.9.4",
+    "@compodoc/compodoc": "^1.1.11",
+    "@egjs/hammerjs": "^2.0.17",
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
+    "@types/node": "~8.9.4",
     "codelyzer": "^5.0.0",
+    "husky": "^4.0.6",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.1.0",
@@ -40,11 +58,53 @@
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.0",
+    "keycharm": "^0.3.1",
+    "lint-staged": "^9.5.0",
     "ng-packagr": "^5.4.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.19.1",
     "protractor": "~5.4.0",
+    "stylelint": "^12.0.1",
+    "stylelint-config-standard": "^19.0.0",
+    "stylelint-declaration-use-variable": "^1.7.2",
+    "stylelint-scss": "^3.13.0",
     "ts-node": "~7.0.0",
     "tsickle": "^0.37.0",
     "tslint": "~5.15.0",
-    "typescript": "~3.5.3"
-  }
+    "typescript": "~3.5.3",
+    "vis-data": "^6.3.3",
+    "vis-util": "^2.1.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "projects/**/*.ts": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jrodva/ngx-vis-network-etsisi.git"
+  },
+  "keywords": [
+    "vis",
+    "vis-network",
+    "ngx-vis",
+    "angular",
+    "graph",
+    "ngx"
+  ],
+  "author": "Jonathan Rodríguez Vaca <jrodva>",
+  "license": "Apache-2.0",
+  "contributors": [
+    "Jonathan Rodríguez Vaca <jrodva>"
+  ],
+  "bugs": {
+    "url": "https://github.com/jrodva/ngx-vis-network-etsisi/issues"
+  },
+  "homepage": "https://github.com/jrodva/ngx-vis-network-etsisi#readme"
 }
