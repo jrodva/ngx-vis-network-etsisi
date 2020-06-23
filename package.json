@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "run-s lint style-lint serve",
+    "serve": "ng serve",
     "build": "ng build",
     "copy:readme": "copyfiles ./README.md ./dist/ngx-vis-network-etsisi",
     "build:lib": "ng build ngx-vis-network-etsisi && npm run copy:readme",

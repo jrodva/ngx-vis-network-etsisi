@@ -11,18 +11,11 @@
  *   limitations under the License.
  */
 
-import { CommonModule } from '@angular/common';
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { NgxVisNetworkEtsisiDirective } from './ngx-vis-network-etsisi.directive';
-import { NgxVisNetworkEtsisiService } from './ngx-vis-network-etsisi.service';
 
-export { Data, DataSet, Edge, Node, Options } from 'vis-network/standalone';
-
-@NgModule({
-  declarations: [NgxVisNetworkEtsisiDirective],
-  imports: [CommonModule],
-  exports: [NgxVisNetworkEtsisiDirective],
-  providers: [NgxVisNetworkEtsisiService],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
-})
-export class NgxVisNetworkEtsisiModule {}
+describe('NgxVisNetworkEtsisiDirective', () => {
+  it('should create an instance', () => {
+    const directive = new NgxVisNetworkEtsisiDirective();
+    expect(directive).toBeTruthy();
+  });
+});
