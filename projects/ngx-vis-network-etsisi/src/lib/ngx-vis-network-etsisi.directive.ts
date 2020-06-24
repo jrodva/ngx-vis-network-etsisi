@@ -16,44 +16,36 @@ import { DataSet, Edge, Node, Options } from 'vis-network/standalone';
 import { NgxVisNetworkEtsisiService } from './ngx-vis-network-etsisi.service';
 
 /**
- * Using this directive the graph will be dynamically added inside the chosen container.
- * @export
- * @class NgxVisNetworkEtsisiDirective
- * @implements OnInit
- * @implements OnDestroy
+ * @description Using this directive the graph will be dynamically added inside the chosen container.
+ * @export NgxVisNetworkEtsisiDirective
  */
 @Directive({
   selector: '[etsisiVis]'
 })
 export class NgxVisNetworkEtsisiDirective implements OnInit, OnDestroy {
   /**
-   * Graph network id.
-   * @type {string}
+   * @description Graph network id.
    * @memberOf NgxVisNetworkEtsisiDirective
    */
   @Input() etsisiVis: string;
   /**
-   * Graph network nodes.
-   * @type {DataSet<Node>}
+   * @description Graph network nodes.
    * @memberOf NgxVisNetworkEtsisiDirective
    */
   @Input() etsisiVisNodes: DataSet<Node>;
   /**
-   * Graph network edges.
-   * @type {DataSet<Edge>}
+   * @description Graph network edges.
    * @memberOf NgxVisNetworkEtsisiDirective
    */
   @Input() etsisiVisEdges: DataSet<Edge>;
   /**
-   * Graph network id.
-   * @type {Options}
+   * @description Graph network id.
    * @memberOf NgxVisNetworkEtsisiDirective
    */
   @Input() etsisiVisOptions: Options;
   /**
-   * This output will be emitted when the graph network is ready.
+   * @description This output will be emitted when the graph network is ready.
    * The output data is the graph network id.
-   * @type {EventEmitter<string>}
    * @memberOf NgxVisNetworkEtsisiDirective
    */
   @Output() ready: EventEmitter<string> = new EventEmitter<string>();
@@ -62,9 +54,9 @@ export class NgxVisNetworkEtsisiDirective implements OnInit, OnDestroy {
   private isReady: boolean;
 
   /**
-   * It creates a new NgxVisNetworkEtsisiDirective
-   * @param {ElementRef} elementRef The HTML element
-   * @param {ngxVisNetworkEtsisiService} ngxVisNetworkEtsisiService The ngxVisNetworkEtsisiService
+   * @description It creates a new NgxVisNetworkEtsisiDirective
+   * @param elementRef The HTML element
+   * @param ngxVisNetworkEtsisiService The ngxVisNetworkEtsisiService
    * @memberOf NgxVisNetworkEtsisiDirective
    */
   constructor(private elementRef: ElementRef, private ngxVisNetworkEtsisiService: NgxVisNetworkEtsisiService) {
@@ -72,7 +64,7 @@ export class NgxVisNetworkEtsisiDirective implements OnInit, OnDestroy {
     this.isReady = false;
   }
   /**
-   * It generates a new graph when the data are available
+   * @description It generates a new graph when the data are available
    * @memberOf NgxVisNetworkEtsisiDirective
    */
   ngOnInit() {
@@ -81,7 +73,7 @@ export class NgxVisNetworkEtsisiDirective implements OnInit, OnDestroy {
     }
   }
   /**
-   * It generates the graph
+   * @description It generates the graph
    * @memberOf NgxVisNetworkEtsisiDirective
    */
   private createNetwork() {
@@ -90,7 +82,7 @@ export class NgxVisNetworkEtsisiDirective implements OnInit, OnDestroy {
     this.ready.emit(this.etsisiVis);
   }
   /**
-   * It destroys the graph
+   * @description It destroys the graph
    * @memberOf NgxVisNetworkEtsisiDirective
    */
   ngOnDestroy() {
