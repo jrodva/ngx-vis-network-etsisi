@@ -13,10 +13,11 @@
 
 import { CommonModule } from '@angular/common';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { Data, DataSet, Edge, Node, Options } from 'vis-network/standalone';
 import { NgxVisNetworkEtsisiDirective } from './ngx-vis-network-etsisi.directive';
 import { NgxVisNetworkEtsisiService } from './ngx-vis-network-etsisi.service';
 
-export { Data, DataSet, Edge, Node, Options } from 'vis-network/standalone';
+export { Data, DataSet, Edge, NgxVisNetworkEtsisiDirective, NgxVisNetworkEtsisiService, Node, Options };
 
 @NgModule({
   declarations: [NgxVisNetworkEtsisiDirective],
