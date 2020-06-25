@@ -12,7 +12,8 @@
  */
 
 import { Component } from '@angular/core';
-import { NgxVisNetworkEtsisiService } from 'ngx-vis-network-etsisi';
+import { NgxVisNetworkEtsisiService, DataSet, Node, Options, Edge } from 'ngx-vis-network-etsisi';
+import { graphNetworkEdges, graphNetworkNodes, graphNetworkOptions } from '../assets/data';
 
 @Component({
   selector: 'app-root',
@@ -20,5 +21,19 @@ import { NgxVisNetworkEtsisiService } from 'ngx-vis-network-etsisi';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(private ngxVisNetworkEtsisiService: NgxVisNetworkEtsisiService) {}
+  id: string;
+  nodes: DataSet<Node>;
+  edges: DataSet<Edge>;
+  options: Options;
+
+  constructor(private ngxVisNetworkEtsisiService: NgxVisNetworkEtsisiService) {
+    this.id = 'etsisiGraphNetwork';
+    this.nodes = new DataSet<Node>(graphNetworkNodes);
+    this.edges = new DataSet<Edge>(graphNetworkEdges);
+    this.options = { ...graphNetworkOptions };
+  }
+
+  isGraphNetworkReady() {
+    console.log('Graph network is ready');
+  }
 }
