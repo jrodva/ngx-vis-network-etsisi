@@ -25,6 +25,12 @@
       ],
       "ngx-vis-network-etsisi/*": [
         "dist/ngx-vis-network-etsisi/*"
+      ],
+      "ngx-vis-network-etsisi-showcase": [
+        "dist/ngx-vis-network-etsisi-showcase"
+      ],
+      "ngx-vis-network-etsisi-showcase/*": [
+        "dist/ngx-vis-network-etsisi-showcase/*"
       ]
     }
   },

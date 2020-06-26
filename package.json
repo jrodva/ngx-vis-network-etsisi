@@ -1,13 +1,14 @@
 {
   "name": "ngx-vis-network-etsisi",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "run-s lint style-lint serve",
     "serve": "ng serve",
-    "build": "ng build",
+    "build": "run-s build:lib build:showcase",
     "copy:readme": "copyfiles ./README.md ./dist/ngx-vis-network-etsisi",
     "build:lib": "ng build ngx-vis-network-etsisi && npm run copy:readme",
+    "build:showcase": "ng build ngx-vis-network-etsisi-showcase",
     "test": "ng test",
     "lint": "ng lint --format=stylish",
     "lint:fix": "ng lint --fix=true",

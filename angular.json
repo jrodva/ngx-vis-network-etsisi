@@ -57,7 +57,7 @@
             "main": "projects/ngx-vis-network-etsisi-showcase/src/main.ts",
             "polyfills": "projects/ngx-vis-network-etsisi-showcase/src/polyfills.ts",
             "tsConfig": "projects/ngx-vis-network-etsisi-showcase/tsconfig.app.json",
-            "aot": false,
+            "aot": true,
             "assets": [
               "projects/ngx-vis-network-etsisi-showcase/src/favicon.ico",
               "projects/ngx-vis-network-etsisi-showcase/src/assets"
