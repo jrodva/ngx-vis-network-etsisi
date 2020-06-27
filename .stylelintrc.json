@@ -75,7 +75,7 @@
     "scss/at-extend-no-missing-placeholder": true,
     "scss/selector-no-redundant-nesting-selector": true,
     "selector-list-comma-newline-after": "always",
-    "selector-max-class": 6,
+    "selector-max-class": 10,
     "selector-type-no-unknown": null,
     "sh-waqar/declaration-use-variable": [
       [
