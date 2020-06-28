@@ -18,48 +18,16 @@
       </p>
     </div>
     <div class="menu-container">
-      <div>
+      <a routerLink="/" routerLinkActive="active">
         BASIC
-      </div>
-      <div>
+      </a>
+      <a routerLink="/dinamic" routerLinkActive="active">
         DINAMIC
-      </div>
-      <div>
+      </a>
+      <a routerLink="/style" routerLinkActive="active">
         STYLE
-      </div>
-    </div>
-    <div class="option-container">
-      <div class="option-control">
-        <span class="option-label">LABELS</span>
-        <label class="switch">
-          <input type="checkbox" checked>
-          <span class="slider round"></span>
-        </label>
-      </div>
-      <div class="option-control">
-        <span class="option-label">ICONS</span>
-        <label class="switch">
-          <input type="checkbox" checked>
-          <span class="slider round"></span>
-        </label>
-      </div>
-      <div class="option-control">
-        <span class="option-label">LINKS</span>
-        <label class="switch">
-          <input type="checkbox" checked>
-          <span class="slider round"></span>
-        </label>
-      </div>
-      <div class="option-control">
-        <span class="option-label">NODES</span>
-        <label class="switch">
-          <input type="checkbox" checked>
-          <span class="slider round"></span>
-        </label>
-      </div>
+      </a>
     </div>
   </div>
-  <div class="graph-network"
-       [etsisiVis]="id" [etsisiVisNodes]="nodes" [etsisiVisEdges]="edges" [etsisiVisOptions]="options"
-       (ready)="isGraphNetworkReady()"></div>
+  <router-outlet></router-outlet>
 </div>

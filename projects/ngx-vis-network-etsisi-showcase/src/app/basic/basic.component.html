@@ -1,0 +1,33 @@
+<div class="option-container">
+  <div class="option-control">
+    <span class="option-label">LABELS</span>
+    <label class="switch">
+      <input type="checkbox" checked>
+      <span class="slider round"></span>
+    </label>
+  </div>
+  <div class="option-control">
+    <span class="option-label">ICONS</span>
+    <label class="switch">
+      <input type="checkbox" checked>
+      <span class="slider round"></span>
+    </label>
+  </div>
+  <div class="option-control">
+    <span class="option-label">LINKS</span>
+    <label class="switch">
+      <input type="checkbox" checked>
+      <span class="slider round"></span>
+    </label>
+  </div>
+  <div class="option-control">
+    <span class="option-label">NODES</span>
+    <label class="switch">
+      <input type="checkbox" checked>
+      <span class="slider round"></span>
+    </label>
+  </div>
+</div>
+<div class="graph-network"
+     [etsisiVis]="id" [etsisiVisNodes]="nodes" [etsisiVisEdges]="edges" [etsisiVisOptions]="options"
+     (ready)="isGraphNetworkReady()"></div>

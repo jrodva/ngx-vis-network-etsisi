@@ -13,8 +13,24 @@
 
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { BasicComponent } from './basic/basic.component';
+import { DinamicComponent } from './dinamic/dinamic.component';
+import { StyleComponent } from './style/style.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: '',
+    component: BasicComponent
+  },
+  {
+    path: 'dinamic',
+    component: DinamicComponent
+  },
+  {
+    path: 'style',
+    component: StyleComponent
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
