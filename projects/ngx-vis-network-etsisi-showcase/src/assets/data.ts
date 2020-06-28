@@ -42,17 +42,14 @@ const appColor = {
 };
 
 const appData = {
-  level: 3,
   borderWidthSelected: commonNode.borderWidth,
   color: appColor
 };
 
 const commonEdge = {
   color: { color: 'rgba(0,0,255,0.38)' },
-  from: 0,
   width: 5,
   arrows: {
-    from: {},
     middle: {
       enabled: true,
       imageHeight: 24,
@@ -79,9 +76,25 @@ const recordImage = '/assets/img/record_voice_over-black-24dp.svg';
 
 export const graphNetworkNodes = [
   {
+    id: 5,
+    label: 'Developer',
+    level: 0,
+    ...commonNode,
+    ...appData,
+    image: developerImage
+  },
+  {
+    id: 4,
+    label: 'Code',
+    level: 2,
+    ...commonNode,
+    ...appData,
+    image: codeImage
+  },
+  {
     id: 0,
     label: 'Android',
-    level: 1,
+    level: 4,
     ...commonNode,
     image: androidImage,
     borderWidthSelected: commonNode.borderWidth,
@@ -90,6 +103,7 @@ export const graphNetworkNodes = [
   {
     id: 1,
     label: 'App Blocking',
+    level: 6,
     ...commonNode,
     ...appData,
     image: appBlockingImage
@@ -97,6 +111,7 @@ export const graphNetworkNodes = [
   {
     id: 2,
     label: 'Phone',
+    level: 6,
     ...commonNode,
     ...appData,
     image: phoneImage
@@ -104,27 +119,15 @@ export const graphNetworkNodes = [
   {
     id: 3,
     label: 'Backup',
+    level: 6,
     ...commonNode,
     ...appData,
     image: backupImage
   },
   {
-    id: 4,
-    label: 'Code',
-    ...commonNode,
-    ...appData,
-    image: codeImage
-  },
-  {
-    id: 5,
-    label: 'Developer',
-    ...commonNode,
-    ...appData,
-    image: developerImage
-  },
-  {
     id: 6,
     label: 'Mic',
+    level: 6,
     ...commonNode,
     ...appData,
     image: micImage
@@ -132,6 +135,7 @@ export const graphNetworkNodes = [
   {
     id: 7,
     label: 'Record',
+    level: 6,
     ...commonNode,
     ...appData,
     image: recordImage
@@ -142,42 +146,49 @@ export const graphNetworkEdges = [
   {
     id: 501,
     label: ' ',
+    from: 0,
     to: 1,
     ...commonEdge
   },
   {
     id: 502,
     label: ' ',
+    from: 0,
     to: 2,
     ...commonEdge
   },
   {
     id: 503,
     label: ' ',
+    from: 0,
     to: 3,
     ...commonEdge
   },
   {
     id: 504,
     label: ' ',
-    to: 4,
+    from: 4,
+    to: 0,
     ...commonEdge
   },
   {
     id: 505,
     label: ' ',
-    to: 5,
+    from: 5,
+    to: 4,
     ...commonEdge
   },
   {
     id: 506,
     label: ' ',
+    from: 0,
     to: 6,
     ...commonEdge
   },
   {
     id: 507,
     label: ' ',
+    from: 0,
     to: 7,
     ...commonEdge
   }
