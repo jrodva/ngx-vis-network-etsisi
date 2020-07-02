@@ -2,32 +2,39 @@
   <div class="option-control">
     <span class="option-label">LABELS</span>
     <label class="switch">
-      <input type="checkbox" checked>
+      <input type="checkbox" [checked]="showLabels">
       <span class="slider round"></span>
     </label>
   </div>
   <div class="option-control">
     <span class="option-label">ICONS</span>
     <label class="switch">
-      <input type="checkbox" checked>
+      <input type="checkbox" [checked]="showIcons">
       <span class="slider round"></span>
     </label>
   </div>
   <div class="option-control">
     <span class="option-label">LINKS</span>
     <label class="switch">
-      <input type="checkbox" checked>
+      <input type="checkbox" [checked]="showEdges">
+      <span class="slider round"></span>
+    </label>
+  </div>
+  <div class="option-control" (click)="activeNodes(!showNodes)">
+    <span class="option-label">NODES</span>
+    <label class="switch">
+      <input type="checkbox" [checked]="showNodes">
       <span class="slider round"></span>
     </label>
   </div>
   <div class="option-control">
-    <span class="option-label">NODES</span>
+    <span class="option-label">BUTTONS</span>
     <label class="switch">
-      <input type="checkbox" checked>
+      <input type="checkbox" [checked]="showButtons">
       <span class="slider round"></span>
     </label>
   </div>
 </div>
-<div class="graph-network"
+<div #etsisiGraphNetwork class="graph-network"
      [etsisiVis]="id" [etsisiVisNodes]="nodes" [etsisiVisEdges]="edges" [etsisiVisOptions]="options"
      (ready)="isGraphNetworkReady()"></div>
