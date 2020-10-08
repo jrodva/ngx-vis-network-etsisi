@@ -23,7 +23,6 @@ export class BasicComponent {
     this.id = 'etsisiGraphNetwork';
     this.nodes = new DataSet<Node>(graphNetworkNodes);
     this.edges = new DataSet<Edge>(graphNetworkEdges);
-    this.ngxVisNetworkEtsisiService.create(container, this.nodes, this.edges, this.options);
     this.showNodes = true;
     this.showEdges = true;
     this.showIcons = true;
@@ -33,13 +32,14 @@ export class BasicComponent {
   }
 
   activeNodes(activeNodes: boolean) {
+    this.showNodes = !this.showNodes;
     if (activeNodes) {
-    } else {
       this.ngxVisNetworkEtsisiService.updateNode(this.id, [{ id: 4, label: 'Codessss' }]);
     }
   }
 
   isGraphNetworkReady() {
     console.log('Graph network is ready');
+    this.ngxVisNetworkEtsisiService.create(this.container.nativeElement, this.id, this.nodes, this.edges, this.options);
   }
 }
