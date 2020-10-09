@@ -1,40 +1,37 @@
 <div class="option-container">
   <div class="option-control">
-    <span class="option-label">LABELS</span>
+    <span class="option-label">ETIQUETAS</span>
     <label class="switch">
-      <input type="checkbox" [checked]="showLabels">
+      <input type="checkbox" checked (click)="hideShowLabels()">
       <span class="slider round"></span>
     </label>
   </div>
   <div class="option-control">
-    <span class="option-label">ICONS</span>
+    <span class="option-label">ICONOS</span>
     <label class="switch">
-      <input type="checkbox" [checked]="showIcons">
+      <input type="checkbox" checked (click)="hideShowIcons()">
       <span class="slider round"></span>
     </label>
   </div>
   <div class="option-control">
-    <span class="option-label">LINKS</span>
+    <span class="option-label">ENLACES</span>
     <label class="switch">
-      <input type="checkbox" [checked]="showEdges">
-      <span class="slider round"></span>
-    </label>
-  </div>
-  <div class="option-control" (click)="activeNodes(showNodes)">
-    <span class="option-label">NODES</span>
-    <label class="switch">
-      <input type="checkbox" [checked]="showNodes">
+      <input type="checkbox" checked (click)="hideShowEdges()">
       <span class="slider round"></span>
     </label>
   </div>
   <div class="option-control">
-    <span class="option-label">BUTTONS</span>
+    <span class="option-label">BOTONES</span>
     <label class="switch">
-      <input type="checkbox" [checked]="showButtons">
+      <input type="checkbox" checked (click)="hideShowButtons()">
       <span class="slider round"></span>
     </label>
   </div>
 </div>
-<div #etsisiGraphNetwork class="graph-network"
-     [etsisiVis]="id" [etsisiVisNodes]="nodes" [etsisiVisEdges]="edges" [etsisiVisOptions]="options"
-     (ready)="isGraphNetworkReady()"></div>
+<div class="graph-network"
+     [etsisiVis]="id"
+     [etsisiVisNodes]="nodes"
+     [etsisiVisEdges]="edges"
+     [etsisiVisOptions]="options"
+     (ready)="isGraphNetworkReady()">
+</div>
