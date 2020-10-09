@@ -23,7 +23,6 @@ export class BasicComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log('on init ');
     this.nodes = new DataSet<Node>(graphNetworkNodes);
     this.edges = new DataSet<Edge>(graphNetworkEdges);
     this.options = { ...graphNetworkOptions };
@@ -38,7 +37,6 @@ export class BasicComponent implements OnInit {
   }
 
   hideShowButtons() {
-    console.log('hideShowButtons ');
     this.showButtons = !this.showButtons;
     this.ngxVisNetworkEtsisiService.setOptions(this.id, {
       ...graphNetworkOptions,
@@ -49,7 +47,6 @@ export class BasicComponent implements OnInit {
   }
 
   hideShowEdges() {
-    console.log('hideShowEdges ');
     this.showEdges = !this.showEdges;
     if (this.showEdges) {
       this.ngxVisNetworkEtsisiService.setData(this.id, { edges: this.edges, nodes: this.nodes });
@@ -59,21 +56,27 @@ export class BasicComponent implements OnInit {
   }
 
   hideShowLabels() {
-    console.log('hideShowLabels ');
     this.showLabels = !this.showLabels;
     if (this.showLabels) {
-      this.ngxVisNetworkEtsisiService.setData(this.id, { edges: this.edges, nodes: this.nodes });
+      if (this.showEdges) {
+        this.ngxVisNetworkEtsisiService.setData(this.id, { edges: this.edges, nodes: this.nodes });
+      } else {
+        this.ngxVisNetworkEtsisiService.setData(this.id, { nodes: this.nodes });
+      }
     } else {
       const auxNodes = this.nodes.map(node => {
         node.label = '';
         return node;
       });
-      this.ngxVisNetworkEtsisiService.setData(this.id, { edges: this.edges, nodes: auxNodes });
+      if (this.showEdges) {
+        this.ngxVisNetworkEtsisiService.setData(this.id, { edges: this.edges, nodes: auxNodes });
+      } else {
+        this.ngxVisNetworkEtsisiService.setData(this.id, { nodes: auxNodes });
+      }
     }
   }
 
   hideShowIcons() {
-    console.log('hideShowIcons ');
     this.showIcons = !this.showIcons;
     if (this.showIcons) {
       this.ngxVisNetworkEtsisiService.setData(this.id, { edges: this.edges, nodes: this.nodes });

@@ -6,7 +6,7 @@
       <span class="slider round"></span>
     </label>
   </div>
-  <div class="option-control">
+  <div class="option-control" *ngIf="showEdges">
     <span class="option-label">ICONOS</span>
     <label class="switch">
       <input type="checkbox" checked (click)="hideShowIcons()">

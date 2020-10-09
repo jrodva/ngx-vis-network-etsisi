@@ -267,6 +267,28 @@ export class NgxVisNetworkEtsisiService {
     return 0;
   }
   /**
+   * @description It gets the number of edges for a graph with a concrete id.
+   * @param id is the graph network id.
+   * @memberOf NgxVisNetworkEtsisiService
+   */
+  getEdgesCount(id: string): number {
+    if (this.auxGraphs[id]) {
+      return this.auxGraphs[id].edges.length;
+    }
+    return 0;
+  }
+  /**
+   * @description It gets the number of edges for a graph with a concrete id.
+   * @param id is the graph network id.
+   * @memberOf NgxVisNetworkEtsisiService
+   */
+  getEdges(id: string): DataSet<Edge> | null {
+    if (this.auxGraphs[id]) {
+      return this.auxGraphs[id].edges;
+    }
+    return null;
+  }
+  /**
    * @description It returns if the graph exists.
    * @param id is the graph network id.
    * @memberOf NgxVisNetworkEtsisiService
