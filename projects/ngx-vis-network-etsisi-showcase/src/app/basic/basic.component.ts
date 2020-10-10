@@ -85,6 +85,7 @@ export class BasicComponent implements OnInit {
         edge.arrows = null;
         return edge;
       });
+      console.log('edges ::: ', auxEdges);
       this.ngxVisNetworkEtsisiService.setData(this.id, { edges: auxEdges, nodes: this.nodes });
     }
   }

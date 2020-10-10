@@ -4,14 +4,14 @@
   width: 100vw;
   .option-control {
     padding-top: 10px;
-    width: 180px;
+    width: auto;
     float: left;
     padding-right: 10px;
     .option-label{
       color: $black;
       font-weight: bold;
-      margin: 10px 0 0 10px;
-      width: 100px;
+      margin: 10px 10px 0 10px;
+      width: auto;
       display: block;
       vertical-align: baseline;
       float: left;

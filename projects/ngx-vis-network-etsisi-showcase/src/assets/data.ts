@@ -77,7 +77,7 @@ const recordImage = '/assets/img/record_voice_over-black-24dp.svg';
 export const graphNetworkNodes = [
   {
     id: 5,
-    label: 'Developer',
+    label: 'Ingeniero',
     level: 0,
     ...commonNode,
     ...appData,
@@ -85,7 +85,7 @@ export const graphNetworkNodes = [
   },
   {
     id: 4,
-    label: 'Code',
+    label: 'Código',
     level: 2,
     ...commonNode,
     ...appData,
@@ -102,7 +102,7 @@ export const graphNetworkNodes = [
   },
   {
     id: 1,
-    label: 'App Blocking',
+    label: 'Bloqueo',
     level: 6,
     ...commonNode,
     ...appData,
@@ -110,7 +110,7 @@ export const graphNetworkNodes = [
   },
   {
     id: 2,
-    label: 'Phone',
+    label: 'Teléfono',
     level: 6,
     ...commonNode,
     ...appData,
@@ -118,7 +118,7 @@ export const graphNetworkNodes = [
   },
   {
     id: 3,
-    label: 'Backup',
+    label: 'Copia',
     level: 6,
     ...commonNode,
     ...appData,
@@ -126,7 +126,7 @@ export const graphNetworkNodes = [
   },
   {
     id: 6,
-    label: 'Mic',
+    label: 'Micrófono',
     level: 6,
     ...commonNode,
     ...appData,
@@ -134,7 +134,7 @@ export const graphNetworkNodes = [
   },
   {
     id: 7,
-    label: 'Record',
+    label: 'Grabación',
     level: 6,
     ...commonNode,
     ...appData,
