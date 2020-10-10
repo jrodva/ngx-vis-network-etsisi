@@ -18,11 +18,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgxVisNetworkEtsisiModule } from 'ngx-vis-network-etsisi';
 import { BasicComponent } from './basic/basic.component';
-import { DinamicComponent } from './dinamic/dinamic.component';
+import { DynamicComponent } from './dynamic/dynamic.component';
 import { StyleComponent } from './style/style.component';
 
 @NgModule({
-  declarations: [AppComponent, BasicComponent, StyleComponent, DinamicComponent],
+  declarations: [AppComponent, BasicComponent, StyleComponent, DynamicComponent],
   imports: [BrowserModule, AppRoutingModule, NgxVisNetworkEtsisiModule],
   providers: [],
   bootstrap: [AppComponent]

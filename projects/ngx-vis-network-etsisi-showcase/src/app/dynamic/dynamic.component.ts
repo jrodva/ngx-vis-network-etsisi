@@ -1,25 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { DataSet, Edge, Node, Options } from 'ngx-vis-network-etsisi';
+import { DataSet, Edge, NgxVisNetworkEtsisiService, Node, Options } from 'ngx-vis-network-etsisi';
 import { graphNetworkEdges, graphNetworkNodes, graphNetworkOptions } from '../../assets/data';
 
 @Component({
-  selector: 'app-style',
-  templateUrl: './style.component.html',
-  styleUrls: ['./style.component.scss']
+  selector: 'app-dynamic',
+  templateUrl: './dynamic.component.html',
+  styleUrls: ['./dynamic.component.scss']
 })
-export class StyleComponent implements OnInit {
+export class DynamicComponent implements OnInit {
   id: string;
   nodes: DataSet<Node>;
   edges: DataSet<Edge>;
   options: Options;
-  changeNodeColor: boolean;
-  changeBorderColor: boolean;
-  changeEdgeColor: boolean;
-  changeEdgesIcons: boolean;
 
-  constructor() {
+  constructor(private ngxVisNetworkEtsisiService: NgxVisNetworkEtsisiService) {
     console.log('constructor');
-    this.id = 'etsisiStyleGraphNetwork';
+    this.id = 'etsisiDynamicGraphNetwork';
   }
 
   ngOnInit() {
@@ -31,12 +27,4 @@ export class StyleComponent implements OnInit {
   isGraphNetworkReady() {
     console.log('The graph is loaded');
   }
-
-  setNodeColor() {}
-
-  setBorderColor() {}
-
-  setEdgeColor() {}
-
-  setEdgesIcons() {}
 }

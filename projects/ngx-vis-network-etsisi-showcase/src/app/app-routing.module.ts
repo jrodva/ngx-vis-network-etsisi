@@ -14,7 +14,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { BasicComponent } from './basic/basic.component';
-import { DinamicComponent } from './dinamic/dinamic.component';
+import { DynamicComponent } from './dynamic/dynamic.component';
 import { StyleComponent } from './style/style.component';
 
 const routes: Routes = [
@@ -23,8 +23,8 @@ const routes: Routes = [
     component: BasicComponent
   },
   {
-    path: 'dinamic',
-    component: DinamicComponent
+    path: 'dynamic',
+    component: DynamicComponent
   },
   {
     path: 'style',

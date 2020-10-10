@@ -1,1 +1,37 @@
-<p>style works!</p>
+<div class="option-container">
+  <div class="option-control">
+    <span class="option-label">COLOR DE LOS NODOS</span>
+    <label class="switch">
+      <input type="checkbox" (click)="setNodeColor()">
+      <span class="slider round"></span>
+    </label>
+  </div>
+  <div class="option-control">
+    <span class="option-label">COLOR DE LOS BORDES</span>
+    <label class="switch">
+      <input type="checkbox" (click)="setBorderColor()">
+      <span class="slider round"></span>
+    </label>
+  </div>
+  <div class="option-control">
+    <span class="option-label">COLOR DE LOS ENLACES</span>
+    <label class="switch">
+      <input type="checkbox" (click)="setEdgeColor()">
+      <span class="slider round"></span>
+    </label>
+  </div>
+  <div class="option-control">
+    <span class="option-label">ICONOS DE LOS ENLACES</span>
+    <label class="switch">
+      <input type="checkbox" (click)="setEdgesIcons()">
+      <span class="slider round"></span>
+    </label>
+  </div>
+</div>
+<div class="graph-network"
+     [etsisiVis]="id"
+     [etsisiVisNodes]="nodes"
+     [etsisiVisEdges]="edges"
+     [etsisiVisOptions]="options"
+     (ready)="isGraphNetworkReady()">
+</div>

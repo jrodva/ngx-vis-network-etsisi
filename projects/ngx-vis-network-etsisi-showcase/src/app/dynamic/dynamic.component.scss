@@ -1,0 +1,12 @@
+@import '../scss/variables/colors';
+
+.action-button {
+  background-color: $blue;
+  border: none;
+  border-radius: 5px;
+  color: $white;
+  font-size: 17px;
+  font-weight: bold;
+  height: 33px;
+  line-height: 0.33;
+}
