@@ -17,17 +17,23 @@
         NGX VIS NETWORK ETSISI - CASO DE USO
       </p>
     </div>
-    <div class="menu-container">
-      <a routerLink="/" routerLinkActive="active">
-        BÁSICO
-      </a>
-      <a routerLink="/dynamic" routerLinkActive="active">
+    <ul class="menu-container">
+      <li routerLinkActive="selectedElement" [routerLinkActiveOptions]="{exact: true}">
+        <a routerLink="/">
+          BÁSICO
+        </a>
+      </li>
+      <li routerLinkActive="selectedElement">
+        <a routerLink="/dynamic">
         DINÁMICO
-      </a>
-      <a routerLink="/style" routerLinkActive="active">
-        ESTILO
-      </a>
-    </div>
+        </a>
+      </li>
+      <li routerLinkActive="selectedElement">
+        <a routerLink="/style">
+          ESTILO
+        </a>
+      </li>
+    </ul>
   </div>
   <router-outlet></router-outlet>
 </div>
