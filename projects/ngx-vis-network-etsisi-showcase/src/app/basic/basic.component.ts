@@ -91,10 +91,10 @@ export class BasicComponent implements OnInit {
   }
 
   resetGraph() {
-    this.showIcons = false;
-    this.showLabels = false;
-    this.showEdges = false;
-    this.showButtons = false;
+    this.showIcons = true;
+    this.showLabels = true;
+    this.showEdges = true;
+    this.showButtons = true;
     this.ngxVisNetworkEtsisiService.resetGraph(this.id);
   }
 }
