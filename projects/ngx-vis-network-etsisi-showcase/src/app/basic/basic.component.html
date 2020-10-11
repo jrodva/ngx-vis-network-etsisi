@@ -2,30 +2,33 @@
   <div class="option-control">
     <span class="option-label">ETIQUETAS</span>
     <label class="switch">
-      <input type="checkbox" checked (click)="hideShowLabels()">
+      <input type="checkbox" [checked]="showLabels" (click)="hideShowLabels()">
       <span class="slider round"></span>
     </label>
   </div>
   <div class="option-control" *ngIf="showEdges">
     <span class="option-label">ICONOS</span>
     <label class="switch">
-      <input type="checkbox" checked (click)="hideShowIcons()">
+      <input type="checkbox" [checked]="showIcons" (click)="hideShowIcons()">
       <span class="slider round"></span>
     </label>
   </div>
   <div class="option-control">
     <span class="option-label">ENLACES</span>
     <label class="switch">
-      <input type="checkbox" checked (click)="hideShowEdges()">
+      <input type="checkbox" [checked]="showEdges" (click)="hideShowEdges()">
       <span class="slider round"></span>
     </label>
   </div>
   <div class="option-control">
     <span class="option-label">BOTONES</span>
     <label class="switch">
-      <input type="checkbox" checked (click)="hideShowButtons()">
+      <input type="checkbox" [checked]="showButtons" (click)="hideShowButtons()">
       <span class="slider round"></span>
     </label>
+  </div>
+  <div class="option-control">
+    <button class="action-button" (click)="resetGraph()">REINICIAR GRAFO</button>
   </div>
 </div>
 <div class="graph-network"

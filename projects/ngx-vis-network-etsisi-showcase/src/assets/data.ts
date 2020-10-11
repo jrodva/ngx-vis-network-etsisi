@@ -68,14 +68,18 @@ const commonEdge = {
   }
 };
 
+export const commonEngineer = {
+  label: 'Ingeniero',
+  ...commonNode,
+  ...nodeData,
+  image: developerImage
+};
+
 export const graphNetworkNodes = [
   {
-    id: 5,
-    label: 'Ingeniero',
     level: 0,
-    ...commonNode,
-    ...nodeData,
-    image: developerImage
+    id: 5,
+    ...commonEngineer
   },
   {
     id: 4,
@@ -192,7 +196,7 @@ const layout = {
   hierarchical: {
     enabled: true,
     levelSeparation: 150,
-    nodeSpacing: 110,
+    nodeSpacing: 150,
     treeSpacing: 200,
     blockShifting: true,
     edgeMinimization: true,

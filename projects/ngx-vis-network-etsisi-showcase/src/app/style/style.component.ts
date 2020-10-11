@@ -62,6 +62,10 @@ export class StyleComponent implements OnInit {
     );
   }
 
+  resetGraph() {
+    this.ngxVisNetworkEtsisiService.resetGraph(this.id);
+  }
+
   private updateNodeProperty(isUpdate: boolean, partialNode: Partial<Node>, previousPartialNode: Partial<Node>) {
     if (isUpdate) {
       this.nodes.map(node => {

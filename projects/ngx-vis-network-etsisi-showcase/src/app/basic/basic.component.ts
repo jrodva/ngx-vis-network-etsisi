@@ -89,4 +89,20 @@ export class BasicComponent implements OnInit {
       this.ngxVisNetworkEtsisiService.setData(this.id, { edges: auxEdges, nodes: this.nodes });
     }
   }
+
+  resetGraph() {
+    if (!this.showButtons) {
+      this.hideShowButtons();
+    }
+    if (!this.showEdges) {
+      this.hideShowEdges();
+    }
+    if (!this.showIcons) {
+      this.hideShowIcons();
+    }
+    if (!this.showLabels) {
+      this.hideShowLabels();
+    }
+    this.ngxVisNetworkEtsisiService.resetGraph(this.id);
+  }
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataSet, Edge, NgxVisNetworkEtsisiService, Node, Options } from '../../../../../dist/ngx-vis-network-etsisi';
-import { graphNetworkEdges, graphNetworkNodes, graphNetworkOptions } from '../../assets/data';
+import { commonEngineer, graphNetworkEdges, graphNetworkNodes, graphNetworkOptions } from '../../assets/data';
 
 @Component({
   selector: 'app-dynamic',
@@ -26,5 +26,20 @@ export class DynamicComponent implements OnInit {
 
   isGraphNetworkReady() {
     console.log('The graph is loaded');
+  }
+
+  addNode() {
+    this.ngxVisNetworkEtsisiService.addNode(this.id, {
+      id: Math.random() * 9000,
+      level: Math.random() * 6,
+      ...commonEngineer
+    });
+  }
+
+  resetGraph() {
+    console.log('THIS NODES ::: ', this.nodes);
+    console.log('THIS EDGES ::: ', this.edges);
+    this.ngxVisNetworkEtsisiService.resetGraph(this.id);
+    this.ngxVisNetworkEtsisiService.redraw(this.id);
   }
 }

@@ -392,6 +392,7 @@ export class NgxVisNetworkEtsisiService {
    */
   resetGraph(id: string) {
     if (this.auxGraphs[id]) {
+      console.log('THIS SEED GRAPHS ::: ', this.seedGraphs[id]);
       this.updateNode(id, this.seedGraphs[id].nodes);
       this.updateEdge(id, this.seedGraphs[id].edges);
       this.setOptions(id, this.seedGraphs[id].options);
