@@ -24,7 +24,6 @@ import { StyleComponent } from './style/style.component';
 @NgModule({
   declarations: [AppComponent, BasicComponent, StyleComponent, DynamicComponent],
   imports: [BrowserModule, AppRoutingModule, NgxVisNetworkEtsisiModule],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

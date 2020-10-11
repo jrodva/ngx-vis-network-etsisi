@@ -10,6 +10,8 @@
  *   See the License for the specific language governing permissions and
  *   limitations under the License.
  */
+import { environment } from '../environments/environment';
+
 const commonNode = {
   borderWidth: 3,
   imagePadding: 30,
@@ -56,14 +58,14 @@ const commonEdge = {
   }
 };
 
-const androidImage = '/assets/img/android-black-24dp.svg';
-const appBlockingImage = '/assets/img/app_blocking-black-24dp.svg';
-const phoneImage = '/assets/img/phone-black-24dp.svg';
-const backupImage = '/assets/img/backup-black-24dp.svg';
-const codeImage = '/assets/img/code-black-24dp.svg';
-const developerImage = '/assets/img/developer_mode-24px.svg';
-const micImage = '/assets/img/mic-black-24dp.svg';
-const recordImage = '/assets/img/record_voice_over-black-24dp.svg';
+const androidImage = `${environment.assetsDir}/assets/img/android-black-24dp.svg`;
+const appBlockingImage = `${environment.assetsDir}/assets/img/app_blocking-black-24dp.svg`;
+const phoneImage = `${environment.assetsDir}/assets/img/phone-black-24dp.svg`;
+const backupImage = `${environment.assetsDir}/assets/img/backup-black-24dp.svg`;
+const codeImage = `${environment.assetsDir}/assets/img/code-black-24dp.svg`;
+const developerImage = `${environment.assetsDir}/assets/img/developer_mode-24px.svg`;
+const micImage = `${environment.assetsDir}/assets/img/mic-black-24dp.svg`;
+const recordImage = `${environment.assetsDir}/assets/img/record_voice_over-black-24dp.svg`;
 
 export const graphNetworkNodes = [
   {

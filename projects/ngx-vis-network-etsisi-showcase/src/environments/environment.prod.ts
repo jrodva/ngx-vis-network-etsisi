@@ -12,5 +12,6 @@
  */
 
 export const environment = {
-  production: true
+  production: true,
+  assetsDir: '/ngx-vis-network-etsisi'
 };
