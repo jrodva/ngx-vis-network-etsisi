@@ -16,7 +16,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NgxVisNetworkEtsisiModule } from 'ngx-vis-network-etsisi';
+import { NgxVisNetworkEtsisiModule } from '../../../../dist/ngx-vis-network-etsisi';
 import { BasicComponent } from './basic/basic.component';
 import { DynamicComponent } from './dynamic/dynamic.component';
 import { StyleComponent } from './style/style.component';

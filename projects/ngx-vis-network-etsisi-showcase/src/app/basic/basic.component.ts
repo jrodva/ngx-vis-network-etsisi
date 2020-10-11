@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataSet, Edge, NgxVisNetworkEtsisiService, Node, Options } from 'ngx-vis-network-etsisi';
+import { DataSet, Edge, NgxVisNetworkEtsisiService, Node, Options } from '../../../../../dist/ngx-vis-network-etsisi';
 import { graphNetworkEdges, graphNetworkNodes, graphNetworkOptions } from '../../assets/data';
 
 @Component({
