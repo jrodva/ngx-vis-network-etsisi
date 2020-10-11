@@ -63,6 +63,9 @@ export class StyleComponent implements OnInit {
   }
 
   resetGraph() {
+    this.changeNodeColor = false;
+    this.changeBorderColor = false;
+    this.changeEdgeColor = false;
     this.ngxVisNetworkEtsisiService.resetGraph(this.id);
   }
 

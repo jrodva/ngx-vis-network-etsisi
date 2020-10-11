@@ -37,9 +37,6 @@ export class DynamicComponent implements OnInit {
   }
 
   resetGraph() {
-    console.log('THIS NODES ::: ', this.nodes);
-    console.log('THIS EDGES ::: ', this.edges);
     this.ngxVisNetworkEtsisiService.resetGraph(this.id);
-    this.ngxVisNetworkEtsisiService.redraw(this.id);
   }
 }
