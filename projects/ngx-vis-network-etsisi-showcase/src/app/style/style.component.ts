@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataSet, Edge, Node, Options } from 'ngx-vis-network-etsisi';
+import { DataSet, Edge, NgxVisNetworkEtsisiService, Node, Options } from 'ngx-vis-network-etsisi';
 import { graphNetworkEdges, graphNetworkNodes, graphNetworkOptions } from '../../assets/data';
 
 @Component({
@@ -8,6 +8,10 @@ import { graphNetworkEdges, graphNetworkNodes, graphNetworkOptions } from '../..
   styleUrls: ['./style.component.scss']
 })
 export class StyleComponent implements OnInit {
+  private static readonly NODE_COLOR = '#2196F3';
+  private static readonly BORDER_COLOR = '#7821F3';
+  private static readonly EDGE_COLOR = '#F3F021';
+
   id: string;
   nodes: DataSet<Node>;
   edges: DataSet<Edge>;
@@ -15,9 +19,8 @@ export class StyleComponent implements OnInit {
   changeNodeColor: boolean;
   changeBorderColor: boolean;
   changeEdgeColor: boolean;
-  changeEdgesIcons: boolean;
 
-  constructor() {
+  constructor(private ngxVisNetworkEtsisiService: NgxVisNetworkEtsisiService) {
     console.log('constructor');
     this.id = 'etsisiStyleGraphNetwork';
   }
@@ -32,11 +35,58 @@ export class StyleComponent implements OnInit {
     console.log('The graph is loaded');
   }
 
-  setNodeColor() {}
+  setNodeColor() {
+    this.changeNodeColor = !this.changeNodeColor;
+    this.updateNodeProperty(
+      this.changeNodeColor,
+      { color: { background: StyleComponent.NODE_COLOR } },
+      { color: { background: graphNetworkNodes[0].color.background } }
+    );
+  }
 
-  setBorderColor() {}
+  setBorderColor() {
+    this.changeBorderColor = !this.changeBorderColor;
+    this.updateNodeProperty(
+      this.changeBorderColor,
+      { color: { border: StyleComponent.BORDER_COLOR } },
+      { color: { border: graphNetworkNodes[0].color.border } }
+    );
+  }
 
-  setEdgeColor() {}
+  setEdgeColor() {
+    this.changeEdgeColor = !this.changeEdgeColor;
+    this.updateEdgeProperty(
+      this.changeEdgeColor,
+      { color: { color: StyleComponent.EDGE_COLOR } },
+      { color: { color: graphNetworkEdges[0].color.color } }
+    );
+  }
 
-  setEdgesIcons() {}
+  private updateNodeProperty(isUpdate: boolean, partialNode: Partial<Node>, previousPartialNode: Partial<Node>) {
+    if (isUpdate) {
+      this.nodes.map(node => {
+        this.ngxVisNetworkEtsisiService.updateNode(this.id, { id: node.id, ...partialNode });
+        return node;
+      });
+    } else {
+      this.nodes.map(node => {
+        this.ngxVisNetworkEtsisiService.updateNode(this.id, { id: node.id, ...previousPartialNode });
+        return node;
+      });
+    }
+  }
+
+  private updateEdgeProperty(isUpdate: boolean, partialEdge: Partial<Edge>, previousPartialEdge: Partial<Edge>) {
+    if (isUpdate) {
+      this.edges.map(edge => {
+        this.ngxVisNetworkEtsisiService.updateEdge(this.id, { id: edge.id, ...partialEdge });
+        return edge;
+      });
+    } else {
+      this.edges.map(edge => {
+        this.ngxVisNetworkEtsisiService.updateEdge(this.id, { id: edge.id, ...previousPartialEdge });
+        return edge;
+      });
+    }
+  }
 }

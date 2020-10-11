@@ -23,7 +23,7 @@ const commonNode = {
   size: 58
 };
 
-const androidColor = {
+const nodeColor = {
   border: '#FFF',
   background: '#1B8F1D',
   highlight: {
@@ -32,18 +32,9 @@ const androidColor = {
   }
 };
 
-const appColor = {
-  border: '#FFF',
-  background: '#3E1B8F',
-  highlight: {
-    border: '#F00',
-    background: '#3E1B8F'
-  }
-};
-
-const appData = {
+const nodeData = {
   borderWidthSelected: commonNode.borderWidth,
-  color: appColor
+  color: nodeColor
 };
 
 const commonEdge = {
@@ -80,7 +71,7 @@ export const graphNetworkNodes = [
     label: 'Ingeniero',
     level: 0,
     ...commonNode,
-    ...appData,
+    ...nodeData,
     image: developerImage
   },
   {
@@ -88,7 +79,7 @@ export const graphNetworkNodes = [
     label: 'Código',
     level: 2,
     ...commonNode,
-    ...appData,
+    ...nodeData,
     image: codeImage
   },
   {
@@ -98,14 +89,14 @@ export const graphNetworkNodes = [
     ...commonNode,
     image: androidImage,
     borderWidthSelected: commonNode.borderWidth,
-    color: androidColor
+    color: nodeColor
   },
   {
     id: 1,
     label: 'Bloqueo',
     level: 6,
     ...commonNode,
-    ...appData,
+    ...nodeData,
     image: appBlockingImage
   },
   {
@@ -113,7 +104,7 @@ export const graphNetworkNodes = [
     label: 'Teléfono',
     level: 6,
     ...commonNode,
-    ...appData,
+    ...nodeData,
     image: phoneImage
   },
   {
@@ -121,7 +112,7 @@ export const graphNetworkNodes = [
     label: 'Copia',
     level: 6,
     ...commonNode,
-    ...appData,
+    ...nodeData,
     image: backupImage
   },
   {
@@ -129,7 +120,7 @@ export const graphNetworkNodes = [
     label: 'Micrófono',
     level: 6,
     ...commonNode,
-    ...appData,
+    ...nodeData,
     image: micImage
   },
   {
@@ -137,7 +128,7 @@ export const graphNetworkNodes = [
     label: 'Grabación',
     level: 6,
     ...commonNode,
-    ...appData,
+    ...nodeData,
     image: recordImage
   }
 ];
