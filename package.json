@@ -8,7 +8,7 @@
     "build": "run-s build:lib build:showcase",
     "copy:readme": "copyfiles ./README.md ./dist/ngx-vis-network-etsisi",
     "build:lib": "ng build ngx-vis-network-etsisi && npm run copy:readme",
-    "build:showcase": "ng build ngx-vis-network-etsisi-showcase --baseHref=https://jrodva.github.io/ngx-vis-network-etsisi/ --deploy-url=https://jrodva.github.io/ngx-vis-network-etsisi/",
+    "build:showcase": "ng build ngx-vis-network-etsisi-showcase --deploy-url https://jrodva.github.io/ngx-vis-network-etsisi/",
     "build:dev": "run-s build:dev:lib build:dev:showcase",
     "build:dev:lib": "ng build ngx-vis-network-etsisi",
     "build:dev:showcase": "ng build ngx-vis-network-etsisi-showcase",
