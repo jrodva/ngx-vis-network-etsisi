@@ -62,7 +62,7 @@ const phoneImage = '/assets/img/phone-black-24dp.svg';
 const backupImage = '/assets/img/backup-black-24dp.svg';
 const codeImage = '/assets/img/code-black-24dp.svg';
 const developerImage = '/assets/img/developer_mode-24px.svg';
-const micImage = '/assets/img/mic-black-24dp.svg';
+const micImage = './assets/img/mic-black-24dp.svg';
 const recordImage = '/assets/img/record_voice_over-black-24dp.svg';
 
 export const graphNetworkNodes = [
