@@ -16,4 +16,4 @@ jobs:
         with:
           access-token: ${{ secrets.PUBLISH_ETSISI_SHOWCASE }}
           source-directory: dist/ngx-vis-network-etsisi-showcase
-          build-command: npm run build:showcase
+          build-command: npm run build
