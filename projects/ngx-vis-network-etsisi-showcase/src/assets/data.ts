@@ -12,6 +12,16 @@
  */
 import { environment } from '../environments/environment';
 
+const androidImage = `${environment.assetsDir}/assets/img/android-black-24dp.svg`;
+const appBlockingImage = `${environment.assetsDir}/assets/img/app_blocking-black-24dp.svg`;
+const phoneImage = `${environment.assetsDir}/assets/img/phone-black-24dp.svg`;
+const backupImage = `${environment.assetsDir}/assets/img/backup-black-24dp.svg`;
+const codeImage = `${environment.assetsDir}/assets/img/code-black-24dp.svg`;
+const developerImage = `${environment.assetsDir}/assets/img/developer_mode-24px.svg`;
+const linkImage = `${environment.assetsDir}/assets/img/link.svg`;
+const micImage = `${environment.assetsDir}/assets/img/mic-black-24dp.svg`;
+const recordImage = `${environment.assetsDir}/assets/img/record_voice_over-black-24dp.svg`;
+
 const commonNode = {
   borderWidth: 3,
   imagePadding: 30,
@@ -48,7 +58,7 @@ const commonEdge = {
       imageHeight: 24,
       imageWidth: 24,
       scaleFactor: 1,
-      src: '/assets/img/link.svg',
+      src: linkImage,
       type: 'image'
     }
   },
@@ -57,15 +67,6 @@ const commonEdge = {
     align: 'middle'
   }
 };
-
-const androidImage = `${environment.assetsDir}/assets/img/android-black-24dp.svg`;
-const appBlockingImage = `${environment.assetsDir}/assets/img/app_blocking-black-24dp.svg`;
-const phoneImage = `${environment.assetsDir}/assets/img/phone-black-24dp.svg`;
-const backupImage = `${environment.assetsDir}/assets/img/backup-black-24dp.svg`;
-const codeImage = `${environment.assetsDir}/assets/img/code-black-24dp.svg`;
-const developerImage = `${environment.assetsDir}/assets/img/developer_mode-24px.svg`;
-const micImage = `${environment.assetsDir}/assets/img/mic-black-24dp.svg`;
-const recordImage = `${environment.assetsDir}/assets/img/record_voice_over-black-24dp.svg`;
 
 export const graphNetworkNodes = [
   {
