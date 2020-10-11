@@ -1,27 +1,30 @@
 <div class="option-container">
   <div class="option-control">
-    <span class="option-label">COLOR DE LOS NODOS</span>
+    <span class="option-label">CAMBIAR COLOR DE:</span>
+  </div>
+  <div class="option-control">
+    <span class="option-label">NODOS</span>
     <label class="switch">
       <input type="checkbox" (click)="setNodeColor()">
       <span class="slider round"></span>
     </label>
   </div>
   <div class="option-control">
-    <span class="option-label">COLOR DE LOS BORDES</span>
+    <span class="option-label">BORDES</span>
     <label class="switch">
       <input type="checkbox" (click)="setBorderColor()">
       <span class="slider round"></span>
     </label>
   </div>
   <div class="option-control">
-    <span class="option-label">COLOR DE LOS ENLACES</span>
+    <span class="option-label">ENLACES</span>
     <label class="switch">
       <input type="checkbox" (click)="setEdgeColor()">
       <span class="slider round"></span>
     </label>
   </div>
   <div class="option-control">
-    <button class="action-button" (click)="resetGraph()">REINICIAR GRAFO</button>
+    <button class="action-button" (click)="resetGraph()">REINICIAR</button>
   </div>
 </div>
 <div class="graph-network"

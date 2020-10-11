@@ -29,10 +29,9 @@ body {
     border: none;
     border-radius: 5px;
     color: $white;
-    font-size: 14px;
+    font-size: 0.8em;
     font-weight: bold;
     height: 33px;
-    line-height: 0.33;
   }
   .option-control {
     padding-top: 10px;
@@ -41,9 +40,9 @@ body {
     padding-right: 10px;
     .option-label{
       color: $black;
-      font-size: 14px;
+      font-size: 0.8em;
       font-weight: bold;
-      margin: 10px 10px 0 0;
+      margin: 10px 5px 0 0;
       width: auto;
       display: block;
       vertical-align: baseline;
