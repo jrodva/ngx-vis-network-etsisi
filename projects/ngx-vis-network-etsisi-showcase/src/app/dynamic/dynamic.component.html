@@ -1,14 +1,5 @@
 <div class="option-container">
   <div class="option-control">
-    <button class="action-button" (click)="addNode()">AÑADIR NODO</button>
-  </div>
-  <div class="option-control">
-    <button class="action-button">AÑADIR NODO CON ENLACE</button>
-  </div>
-  <div class="option-control">
-    <button class="action-button">ELIMINAR NODO</button>
-  </div>
-  <div class="option-control">
     <button class="action-button" (click)="resetGraph()">REINICIAR</button>
   </div>
 </div>
@@ -16,6 +7,5 @@
      [etsisiVis]="id"
      [etsisiVisNodes]="nodes"
      [etsisiVisEdges]="edges"
-     [etsisiVisOptions]="options"
-     (ready)="isGraphNetworkReady()">
+     [etsisiVisOptions]="options">
 </div>

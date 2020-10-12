@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataSet, Edge, NgxVisNetworkEtsisiService, Node, Options } from '../../../../../dist/ngx-vis-network-etsisi';
-import { commonEngineer, graphNetworkEdges, graphNetworkNodes, graphNetworkOptions } from '../../assets/data';
+import { graphNetworkOptions } from '../../assets/data';
 
 @Component({
   selector: 'app-dynamic',
@@ -14,26 +14,29 @@ export class DynamicComponent implements OnInit {
   options: Options;
 
   constructor(private ngxVisNetworkEtsisiService: NgxVisNetworkEtsisiService) {
-    console.log('constructor');
     this.id = 'etsisiDynamicGraphNetwork';
   }
 
   ngOnInit() {
-    this.nodes = new DataSet<Node>(graphNetworkNodes);
-    this.edges = new DataSet<Edge>(graphNetworkEdges);
-    this.options = { ...graphNetworkOptions };
-  }
-
-  isGraphNetworkReady() {
-    console.log('The graph is loaded');
-  }
-
-  addNode() {
-    this.ngxVisNetworkEtsisiService.addNode(this.id, {
-      id: Math.random() * 9000,
-      level: Math.random() * 6,
-      ...commonEngineer
-    });
+    this.nodes = new DataSet<Node>([]);
+    this.edges = new DataSet<Edge>([]);
+    const manipulation = {
+      enabled: true,
+      initiallyActive: true,
+      addNode: true,
+      addEdge: true,
+      editEdge: true,
+      deleteNode: true,
+      deleteEdge: true
+    };
+    this.options = {
+      ...graphNetworkOptions,
+      layout: {
+        hierarchical: { enabled: false }
+      },
+      manipulation,
+      locale: 'es'
+    };
   }
 
   resetGraph() {

@@ -21,7 +21,6 @@ export class StyleComponent implements OnInit {
   changeEdgeColor: boolean;
 
   constructor(private ngxVisNetworkEtsisiService: NgxVisNetworkEtsisiService) {
-    console.log('constructor');
     this.id = 'etsisiStyleGraphNetwork';
   }
 
@@ -29,10 +28,6 @@ export class StyleComponent implements OnInit {
     this.nodes = new DataSet<Node>(graphNetworkNodes);
     this.edges = new DataSet<Edge>(graphNetworkEdges);
     this.options = { ...graphNetworkOptions };
-  }
-
-  isGraphNetworkReady() {
-    console.log('The graph is loaded');
   }
 
   setNodeColor() {

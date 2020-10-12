@@ -69,7 +69,6 @@ const commonEdge = {
 };
 
 export const commonEngineer = {
-  label: 'Ingeniero',
   ...commonNode,
   ...nodeData,
   image: developerImage
@@ -79,6 +78,7 @@ export const graphNetworkNodes = [
   {
     level: 0,
     id: 5,
+    label: 'Ingeniero',
     ...commonEngineer
   },
   {
@@ -204,17 +204,9 @@ const layout = {
     direction: 'UD'
   }
 };
-const manipulation = {
-  enabled: false,
-  initiallyActive: false,
-  addNode: true,
-  addEdge: true,
-  editEdge: true,
-  deleteNode: true,
-  deleteEdge: true
-};
+
 const interaction = {
   navigationButtons: true
 };
 
-export const graphNetworkOptions = { layout, manipulation, interaction };
+export const graphNetworkOptions = { layout, interaction };

@@ -18,7 +18,6 @@ export class BasicComponent implements OnInit {
   showButtons: boolean;
 
   constructor(private ngxVisNetworkEtsisiService: NgxVisNetworkEtsisiService) {
-    console.log('constructor');
     this.id = 'etsisiGraphNetwork';
   }
 
@@ -85,7 +84,6 @@ export class BasicComponent implements OnInit {
         edge.arrows = null;
         return edge;
       });
-      console.log('edges ::: ', auxEdges);
       this.ngxVisNetworkEtsisiService.setData(this.id, { edges: auxEdges, nodes: this.nodes });
     }
   }
