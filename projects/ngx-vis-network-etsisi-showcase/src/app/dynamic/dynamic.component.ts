@@ -4,8 +4,7 @@ import { graphNetworkOptions } from '../../assets/data';
 
 @Component({
   selector: 'app-dynamic',
-  templateUrl: './dynamic.component.html',
-  styleUrls: ['./dynamic.component.scss']
+  templateUrl: './dynamic.component.html'
 })
 export class DynamicComponent implements OnInit {
   id: string;

@@ -4,8 +4,7 @@ import { graphNetworkEdges, graphNetworkNodes, graphNetworkOptions } from '../..
 
 @Component({
   selector: 'app-style',
-  templateUrl: './style.component.html',
-  styleUrls: ['./style.component.scss']
+  templateUrl: './style.component.html'
 })
 export class StyleComponent implements OnInit {
   private static readonly NODE_COLOR = '#2196F3';

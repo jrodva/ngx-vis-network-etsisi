@@ -23,7 +23,7 @@ body {
 
 .option-container {
   @media (max-width: 604px) {
-    height: 12vh;
+    height: 14vh;
   };
   @media (min-width: 605px) {
     height: 5vh;
@@ -111,7 +111,7 @@ body {
 .graph-network {
   width: 100vw;
   @media (max-width: 604px) {
-    height: 71vh;
+    height: 67vh;
   };
   @media (min-width: 605px) {
     height: 80vh;
