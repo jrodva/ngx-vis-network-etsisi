@@ -12,7 +12,6 @@
  */
 
 import { TestBed } from '@angular/core/testing';
-
 import { NgxVisNetworkEtsisiService } from './ngx-vis-network-etsisi.service';
 
 describe('NgxVisNetworkEtsisiService', () => {
