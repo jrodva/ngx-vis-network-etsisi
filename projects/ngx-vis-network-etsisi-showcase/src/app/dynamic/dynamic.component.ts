@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataSet, Edge, NgxVisNetworkEtsisiService, Node, Options } from '../../../../../dist/ngx-vis-network-etsisi';
+import { DataSet, Edge, Locales, NgxVisNetworkEtsisiService, Node, Options } from '../../../../../dist/ngx-vis-network-etsisi';
 import { graphNetworkOptions } from '../../assets/data';
 
 @Component({
@@ -34,11 +34,32 @@ export class DynamicComponent implements OnInit {
         hierarchical: { enabled: false }
       },
       manipulation,
-      locale: 'es'
+      locale: 'es',
+      locales: DynamicComponent.getLocales()
     };
   }
 
   resetGraph() {
     this.ngxVisNetworkEtsisiService.resetGraph(this.id);
+  }
+
+  private static getLocales(): Locales {
+    return {
+      es: {
+        edit: 'Editar',
+        del: 'Borrar elemento seleccionado',
+        back: 'Atrás',
+        addNode: 'Añadir nodo',
+        addEdge: 'Añadir enlace',
+        editNode: 'Editar nodo',
+        editEdge: 'Editar enlace',
+        addDescription: 'Haz click en un espacio vacío para crear un nuevo nodo.',
+        edgeDescription: 'Haz click en un nodo y arrastra el enlace a otro nodo para conectarlos.',
+        editEdgeDescription: 'Haz clic en los puntos de control y arrástrelos a un nodo para conectarse a él.',
+        createEdgeError: 'No es posible añadir enlaces a un cluster.',
+        deleteClusterError: 'Los clusters no pueden ser borrados.',
+        editClusterError: 'Los clusters no pueden ser editados.'
+      }
+    };
   }
 }
