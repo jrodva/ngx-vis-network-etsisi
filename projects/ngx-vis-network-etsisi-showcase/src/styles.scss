@@ -17,11 +17,17 @@ body {
   padding: 0;
   ul {
     margin: 0;
+    padding: 0;
   }
 }
 
 .option-container {
-  height: 5vh;
+  @media (max-width: 604px) {
+    height: 12vh;
+  };
+  @media (min-width: 605px) {
+    height: 5vh;
+  };
   width: 100vw;
   padding-left: 10px;
   .action-button {
@@ -104,7 +110,12 @@ body {
 }
 .graph-network {
   width: 100vw;
-  height: 80vh;
+  @media (max-width: 604px) {
+    height: 71vh;
+  };
+  @media (min-width: 605px) {
+    height: 80vh;
+  };
   background: transparent linear-gradient( 180deg, $soft-dark-gray 0%, $dark-gray 100% ) 0 0 no-repeat padding-box;
 }
 
