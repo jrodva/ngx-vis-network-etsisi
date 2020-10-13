@@ -70,13 +70,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/NgxVisNetworkEtsisiModule.html" data-type="entity-link">NgxVisNetworkEtsisiModule</a>
                                 <li class="chapter inner">
                                     <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                        'data-target="#directives-links-module-NgxVisNetworkEtsisiModule-89d8405e85b7ee8ed2f1c6fe9b7c2893"' : 'data-target="#xs-directives-links-module-NgxVisNetworkEtsisiModule-89d8405e85b7ee8ed2f1c6fe9b7c2893"' }>
+                                        'data-target="#directives-links-module-NgxVisNetworkEtsisiModule-6525890b9fa26cdb728c7709cd0b1ca4"' : 'data-target="#xs-directives-links-module-NgxVisNetworkEtsisiModule-6525890b9fa26cdb728c7709cd0b1ca4"' }>
                                         <span class="icon ion-md-code-working"></span>
                                         <span>Directives</span>
                                         <span class="icon ion-ios-arrow-down"></span>
                                     </div>
-                                    <ul class="links collapse" ${ isNormalMode ? 'id="directives-links-module-NgxVisNetworkEtsisiModule-89d8405e85b7ee8ed2f1c6fe9b7c2893"' :
-                                        'id="xs-directives-links-module-NgxVisNetworkEtsisiModule-89d8405e85b7ee8ed2f1c6fe9b7c2893"' }>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="directives-links-module-NgxVisNetworkEtsisiModule-6525890b9fa26cdb728c7709cd0b1ca4"' :
+                                        'id="xs-directives-links-module-NgxVisNetworkEtsisiModule-6525890b9fa26cdb728c7709cd0b1ca4"' }>
                                         <li class="link">
                                             <a href="directives/NgxVisNetworkEtsisiDirective.html"
                                                 data-type="entity-link" data-context="sub-entity" data-context-id="modules">NgxVisNetworkEtsisiDirective</a>
@@ -85,13 +85,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 </li>
                                 <li class="chapter inner">
                                     <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                        'data-target="#injectables-links-module-NgxVisNetworkEtsisiModule-89d8405e85b7ee8ed2f1c6fe9b7c2893"' : 'data-target="#xs-injectables-links-module-NgxVisNetworkEtsisiModule-89d8405e85b7ee8ed2f1c6fe9b7c2893"' }>
+                                        'data-target="#injectables-links-module-NgxVisNetworkEtsisiModule-6525890b9fa26cdb728c7709cd0b1ca4"' : 'data-target="#xs-injectables-links-module-NgxVisNetworkEtsisiModule-6525890b9fa26cdb728c7709cd0b1ca4"' }>
                                         <span class="icon ion-md-arrow-round-down"></span>
                                         <span>Injectables</span>
                                         <span class="icon ion-ios-arrow-down"></span>
                                     </div>
-                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-NgxVisNetworkEtsisiModule-89d8405e85b7ee8ed2f1c6fe9b7c2893"' :
-                                        'id="xs-injectables-links-module-NgxVisNetworkEtsisiModule-89d8405e85b7ee8ed2f1c6fe9b7c2893"' }>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-NgxVisNetworkEtsisiModule-6525890b9fa26cdb728c7709cd0b1ca4"' :
+                                        'id="xs-injectables-links-module-NgxVisNetworkEtsisiModule-6525890b9fa26cdb728c7709cd0b1ca4"' }>
                                         <li class="link">
                                             <a href="injectables/NgxVisNetworkEtsisiService.html"
                                                 data-type="entity-link" data-context="sub-entity" data-context-id="modules" }>NgxVisNetworkEtsisiService</a>
