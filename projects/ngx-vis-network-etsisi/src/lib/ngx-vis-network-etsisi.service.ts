@@ -222,12 +222,25 @@ export class NgxVisNetworkEtsisiService {
    * @description Aux structure to store all graphs network data.
    * @memberOf NgxVisNetworkEtsisiService
    */
-  private auxGraphs: { [id: string]: { network: Network; nodes: DataSet<Node>; edges: DataSet<Edge>; options?: Options } };
+  private auxGraphs: {
+    [id: string]: {
+      network: Network;
+      nodes: DataSet<Node>;
+      edges: DataSet<Edge>;
+      options?: Options;
+    };
+  };
   /**
    * @description Structure to store the seed graphs network data.
    * @memberOf NgxVisNetworkEtsisiService
    */
-  private seedGraphs: { [id: string]: { nodes: Node[]; edges: Edge[]; options?: Options } };
+  private seedGraphs: {
+    [id: string]: {
+      nodes: Node[];
+      edges: Edge[];
+      options?: Options;
+    };
+  };
 
   constructor() {
     this.auxGraphs = {};
@@ -278,7 +291,18 @@ export class NgxVisNetworkEtsisiService {
     return 0;
   }
   /**
-   * @description It gets the number of edges for a graph with a concrete id.
+   * @description It gets the nodes for a graph with a concrete id.
+   * @param id is the graph network id.
+   * @memberOf NgxVisNetworkEtsisiService
+   */
+  getNodes(id: string): DataSet<Node> | null {
+    if (this.auxGraphs[id]) {
+      return this.auxGraphs[id].nodes;
+    }
+    return null;
+  }
+  /**
+   * @description It gets the edges for a graph with a concrete id.
    * @param id is the graph network id.
    * @memberOf NgxVisNetworkEtsisiService
    */
@@ -369,11 +393,13 @@ export class NgxVisNetworkEtsisiService {
   /**
    * @description Updates a background node in a graph network for only one node.
    * @param id is the graph network id.
-   * @param nodeData is the data to modify a background node.
+   * @param nodeId is the node id that we want to change
+   * @param backgroundColor is the background color to edit the node
    * @memberOf NgxVisNetworkEtsisiService
    */
-  setBackgroundNode(id: string, nodeData: Node) {
-    this.updateNode(id, nodeData);
+  setBackgroundNode(id: string, nodeId: string | number, backgroundColor: string) {
+    const selectedNode: Node = this.getNodes(id).get(nodeId);
+    this.updateNode(id, { ...selectedNode, ...{ color: { background: backgroundColor } } });
   }
   /**
    * @description Gets the node positions using an array of nodes id for a graph node.
@@ -393,7 +419,8 @@ export class NgxVisNetworkEtsisiService {
   resetGraph(id: string) {
     if (this.auxGraphs[id]) {
       this.setOptions(id, this.seedGraphs[id].options);
-      this.setData(id, { edges: this.seedGraphs[id].edges, nodes: this.seedGraphs[id].nodes });
+      this.updateNode(id, this.seedGraphs[id].nodes);
+      this.updateEdge(id, this.seedGraphs[id].edges);
     } else {
       throw new Error(`Graph ${id} doesn't exist.`);
     }

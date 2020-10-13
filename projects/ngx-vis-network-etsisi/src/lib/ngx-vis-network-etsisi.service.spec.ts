@@ -11,14 +11,116 @@
  *   limitations under the License.
  */
 
-import { TestBed } from '@angular/core/testing';
 import { NgxVisNetworkEtsisiService } from './ngx-vis-network-etsisi.service';
+import { Component } from '@angular/core';
+import { DataSet, Edge, Node } from 'ngx-vis-network-etsisi';
+import { graphNetworkEdges, graphNetworkNodes, graphNetworkOptions } from '../../../ngx-vis-network-etsisi-showcase/src/assets/data';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { NgxVisNetworkEtsisiDirective } from './ngx-vis-network-etsisi.directive';
+
+@Component({
+  selector: 'mock-service-component',
+  template:
+    '<div [etsisiVis]="id" [etsisiVisNodes]="nodes" [etsisiVisEdges]="edges" [etsisiVisOptions]="options" (ready)="isGraphNetworkReady()"></div>'
+})
+class MockServiceComponent {
+  id = 'testingService';
+  nodes = new DataSet<Node>(graphNetworkNodes);
+  edges = new DataSet<Edge>(graphNetworkEdges);
+  options = { ...graphNetworkOptions };
+
+  isGraphNetworkReady() {
+    console.log('The graph testingService is loaded');
+  }
+}
 
 describe('NgxVisNetworkEtsisiService', () => {
-  beforeEach(() => TestBed.configureTestingModule({}));
+  let fixture: ComponentFixture<MockServiceComponent>;
+  let service: NgxVisNetworkEtsisiService;
+
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [MockServiceComponent, NgxVisNetworkEtsisiDirective]
+    });
+    fixture = TestBed.createComponent(MockServiceComponent);
+    service = TestBed.get(NgxVisNetworkEtsisiService);
+  }));
 
   it('should be created', () => {
-    const service: NgxVisNetworkEtsisiService = TestBed.get(NgxVisNetworkEtsisiService);
     expect(service).toBeTruthy();
+  });
+
+  it('should be the same nodes count', () => {
+    fixture.detectChanges();
+    expect(service.getNodesCount('testingService')).toBe(8);
+  });
+
+  it('should be the same edges count', () => {
+    fixture.detectChanges();
+    expect(service.getEdgesCount('testingService')).toBe(7);
+  });
+
+  it('should be true if the id exists', () => {
+    fixture.detectChanges();
+    expect(service.isAnExistingGraphNetwork('testingService')).toBe(true);
+  });
+
+  it('should add a node in a graph', () => {
+    fixture.detectChanges();
+    let extraNode = { ...graphNetworkNodes[0] };
+    extraNode.id = 3433;
+    service.addNode('testingService', extraNode);
+    expect(service.getNodesCount('testingService')).toBe(graphNetworkNodes.length + 1);
+  });
+
+  it('should update a node in a graph', () => {
+    fixture.detectChanges();
+    let updatedNode = { ...graphNetworkNodes[0] };
+    updatedNode.label = 'Extra';
+    service.updateNode('testingService', updatedNode);
+    expect(service.getNodes('testingService').get(updatedNode.label)).toBeDefined('Extra');
+  });
+
+  it('should remove a node from a graph', () => {
+    fixture.detectChanges();
+    const initialLength = graphNetworkNodes.length;
+    const removedNodeId = graphNetworkNodes[0].id;
+    service.removeNode('testingService', removedNodeId);
+    expect(service.getNodes('testingService').length).toBe(initialLength - 1);
+  });
+
+  it('should add an edge in a graph', () => {
+    fixture.detectChanges();
+    const initialLength = graphNetworkEdges.length;
+    let newEdge = { ...graphNetworkEdges[0] };
+    newEdge.id = 3400;
+    service.addEdge('testingService', newEdge);
+    expect(service.getEdges('testingService').length).toBe(initialLength + 1);
+  });
+
+  it('should remove an edge from a graph', () => {
+    fixture.detectChanges();
+    const initialLength = graphNetworkEdges.length;
+    const removedEdgeId = graphNetworkEdges[0].id;
+    service.removeEdge('testingService', removedEdgeId);
+    expect(service.getEdges('testingService').length).toBe(initialLength - 1);
+  });
+
+  it('should set a background node for a concrete node in a graph', () => {
+    fixture.detectChanges();
+    let extraNode = { ...graphNetworkNodes[0] };
+    const backgroundColor = '#FF0000';
+    service.setBackgroundNode('testingService', extraNode.id, backgroundColor);
+    expect(service.getNodes('testingService').get(extraNode.id).color).toEqual({ background: backgroundColor });
+  });
+
+  it('should reset a graph', () => {
+    fixture.detectChanges();
+    let extraNode = { ...graphNetworkNodes[0] };
+    const initialColor = extraNode.color;
+    const backgroundColor = '#FF0000';
+    service.setBackgroundNode('testingService', extraNode.id, backgroundColor);
+    service.resetGraph('testingService');
+    expect(service.getNodes('testingService').get(extraNode.id).color).toEqual(initialColor);
   });
 });

@@ -48,7 +48,32 @@ describe('NgxVisNetworkEtsisiDirective', () => {
     inst = element.injector.get(NgxVisNetworkEtsisiDirective);
   }));
 
-  it('should create an comp instance', () => {
+  it('should create a component instance', () => {
     expect(fixture).toBeTruthy();
+  });
+
+  it('should have the same id', () => {
+    fixture.detectChanges();
+    expect(inst.etsisiVis).toBe('testingDirective');
+  });
+
+  it('should have the same nodes length', () => {
+    fixture.detectChanges();
+    expect(inst.etsisiVisNodes.length).toBe(8);
+  });
+
+  it('should have the same edges length', () => {
+    fixture.detectChanges();
+    expect(inst.etsisiVisEdges.length).toBe(7);
+  });
+
+  it('should have the interaction buttons activated', () => {
+    fixture.detectChanges();
+    expect(inst.etsisiVisOptions.interaction.navigationButtons).toBe(true);
+  });
+
+  it('should have a hierarchic layout', () => {
+    fixture.detectChanges();
+    expect(inst.etsisiVisOptions.layout.hierarchical.enabled).toBe(true);
   });
 });
