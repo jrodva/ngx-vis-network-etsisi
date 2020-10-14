@@ -85,39 +85,51 @@ For this element we have created:
     
     We have included some new methods:
     - create(container: HTMLElement, id: string, nodes: DataSet<Node>, edges: DataSet<Edge>, options?: Options)
+      
       It creates a graph with the chosen configuration.
 
     - getNodesCount(id: string): number
+      
       It gets the number of nodes for a graph with a concrete id.
       
     - getNodes(id: string): DataSet<Node> | null
+      
       It gets the nodes for a graph with a concrete id.
       
     - getEdges(id: string): DataSet<Edge> | null
+      
       It gets the edges for a graph with a concrete id.
       
     - isAnExistingGraphNetwork(id: string): boolean
+      
       It returns if a graph with a concrete id exists.
       
     - addNode(id: string, data: Node | Node[])
+      
       It adds a node in a concrete graph network.
     
     - updateNode(id: string, data: Node | Node[])
+      
       It updates a node in a graph network.
     
     - removeNode(id: string, nodeId: number)
+      
       It removes a concrete node in a graph network.
     
     - addEdge(id: string, data: Edge | Edge[])
+      
       It adds a concrete edge in a graph network.
     
     - removeEdge(id: string, edgeId: number)
+      
       It removes a concrete edge in a graph network.
     
     - setBackgroundNode(id: string, nodeId: string | number, backgroundColor: string)
+      
       It updates a background node in a graph network for only one node.
     
     - resetGraph(id: string)
+      
       It comes back to the initial state for a graph network.
 
 - ngx-vis-network-etsisi-show-case
