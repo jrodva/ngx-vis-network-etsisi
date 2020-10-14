@@ -50,7 +50,7 @@
 <li><a href="#overall-features">Overall features</a></li>
 <li><a href="#linting">Linting</a></li>
 <li><a href="#running-unit-tests">Running unit tests</a></li>
-<li><a href="#generate-documentation">Generate documentation</a></li>
+<li><a href="#documentation">Documentation</a></li>
 <li><a href="#contributing">Contributing</a></li>
 <li><a href="#license">License</a></li>
 </ul>
@@ -64,7 +64,7 @@
 <li><a href="https://www.npmjs.com/package/vis-util">Vis Util</a></li>
 </ul>
 <h3 id="installation">Installation</h3>
-<p>Just run npm -i ngx-vis-network-etsisi`</p>
+<p>Just run <code>npm -i ngx-vis-network-etsisi</code></p>
 <h3 id="configuration">Configuration</h3>
 <p>You need to import the module NgxVisNetworkEtsisiModule.</p>
 <div><pre class="line-numbers"><code class="language-none">import { NgxVisNetworkEtsisiModule } from &#39;ngx-vis-network-etsisi&#39;;
@@ -88,18 +88,61 @@
 <h2 id="overall-features">Overall features</h2>
 <p>We have two important elements in this project:</p>
 <ul>
-<li><p>ngx-vis-network-etsisi
-For this element we have created:</p>
+<li>ngx-vis-network-etsisi</li>
+</ul>
+<p>For this element we have created:</p>
 <ul>
-<li>A module.</li>
-<li>A directive that is exposed for our service.<div><pre class="line-numbers"><code class="language-none">&#64;Input() etsisiVis: string; 
+<li><p>A module.</p>
+</li>
+<li><p>A directive that is exposed for our service.</p>
+<div><pre class="line-numbers"><code class="language-none">&#64;Input() etsisiVis: string; 
 &#64;Input() etsisiVisNodes: DataSet&lt;Node&gt;; 
 &#64;Input() etsisiVisEdges: DataSet&lt;Edge&gt;; 
 &#64;Input() etsisiVisOptions: Options; 
 &#64;Output() ready: EventEmitter&lt;string&gt; = new EventEmitter&lt;string&gt;();</code></pre></div></li>
-<li>A service that is exposed for our service.</li>
+<li><p>A service that is exposed for our module.</p>
+<p>We have included some new methods:</p>
+<ul>
+<li><p>create(container: HTMLElement, id: string, nodes: DataSet<Node>, edges: DataSet<Edge>, options?: Options)
+It creates a graph with the chosen configuration.</p>
+</li>
+<li><p>getNodesCount(id: string): number
+It gets the number of nodes for a graph with a concrete id.</p>
+</li>
+<li><p>getNodes(id: string): DataSet<Node> | null
+It gets the nodes for a graph with a concrete id.</p>
+</li>
+<li><p>getEdges(id: string): DataSet<Edge> | null
+It gets the edges for a graph with a concrete id.</p>
+</li>
+<li><p>isAnExistingGraphNetwork(id: string): boolean
+It returns if a graph with a concrete id exists.</p>
+</li>
+<li><p>addNode(id: string, data: Node | Node[])
+It adds a node in a concrete graph network.</p>
+</li>
+<li><p>updateNode(id: string, data: Node | Node[])
+It updates a node in a graph network.</p>
+</li>
+<li><p>removeNode(id: string, nodeId: number)
+It removes a concrete node in a graph network.</p>
+</li>
+<li><p>addEdge(id: string, data: Edge | Edge[])
+It adds a concrete edge in a graph network.</p>
+</li>
+<li><p>removeEdge(id: string, edgeId: number)
+It removes a concrete edge in a graph network.</p>
+</li>
+<li><p>setBackgroundNode(id: string, nodeId: string | number, backgroundColor: string)
+It updates a background node in a graph network for only one node.</p>
+</li>
+<li><p>resetGraph(id: string)
+It comes back to the initial state for a graph network.</p>
+</li>
 </ul>
 </li>
+</ul>
+<ul>
 <li><p>ngx-vis-network-etsisi-show-case</p>
 <p>For this element we have created a playroom with 3 main sections:</p>
 <ul>
@@ -159,9 +202,10 @@ In this section we have options to:</p>
 <li>Run <code>npm run style-lint:fix</code> to fix the related errors with all stylelint rules.</li>
 </ul>
 <h2 id="running-unit-tests">Running unit tests</h2>
-<p><code>npm run test</code></p>
-<h2 id="generate-documentation">Generate documentation</h2>
+<p>Run <code>npm run test</code></p>
+<h2 id="documentation">Documentation</h2>
 <p>Run <code>npm run compodoc</code> to generate the project documentation.</p>
+<p>Also, you can check our documentation <a href="https://github.com/jrodva/ngx-vis-network-etsisi/tree/master/documentation">here</a></p>
 <h2 id="contributing">Contributing</h2>
 <p>Please read <a href="https://github.com/jrodva/ngx-vis-network-etsisi/blob/master/contributing.md">contributing.md</a> to contribute to our project.</p>
 <h2 id="license">License</h2>

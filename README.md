@@ -20,7 +20,7 @@ The main goal of this project is get easier the use of Vis Network including an 
   - [Overall features](#overall-features)
   - [Linting](#linting)
   - [Running unit tests](#running-unit-tests)
-  - [Generate documentation](#generate-documentation)
+  - [Documentation](#documentation)
   - [Contributing](#contributing)
   - [License](#license)
 
@@ -36,7 +36,7 @@ Also, we need to install those dependencies:
 - [Vis Util](https://www.npmjs.com/package/vis-util)
 
 ### Installation
-Just run npm -i ngx-vis-network-etsisi`
+Just run `npm -i ngx-vis-network-etsisi`
 
 ### Configuration
 You need to import the module NgxVisNetworkEtsisiModule.
@@ -69,6 +69,7 @@ import { DataSet, Edge, NgxVisNetworkEtsisiService, Node, Options } from 'ngx-vi
 ## Overall features
 We have two important elements in this project:
 - ngx-vis-network-etsisi
+
 For this element we have created:
 
   - A module.
@@ -80,7 +81,44 @@ For this element we have created:
     @Input() etsisiVisOptions: Options; 
     @Output() ready: EventEmitter<string> = new EventEmitter<string>();
 ```
-  - A service that is exposed for our service.
+  - A service that is exposed for our module.
+    
+    We have included some new methods:
+    - create(container: HTMLElement, id: string, nodes: DataSet<Node>, edges: DataSet<Edge>, options?: Options)
+      It creates a graph with the chosen configuration.
+
+    - getNodesCount(id: string): number
+      It gets the number of nodes for a graph with a concrete id.
+      
+    - getNodes(id: string): DataSet<Node> | null
+      It gets the nodes for a graph with a concrete id.
+      
+    - getEdges(id: string): DataSet<Edge> | null
+      It gets the edges for a graph with a concrete id.
+      
+    - isAnExistingGraphNetwork(id: string): boolean
+      It returns if a graph with a concrete id exists.
+      
+    - addNode(id: string, data: Node | Node[])
+      It adds a node in a concrete graph network.
+    
+    - updateNode(id: string, data: Node | Node[])
+      It updates a node in a graph network.
+    
+    - removeNode(id: string, nodeId: number)
+      It removes a concrete node in a graph network.
+    
+    - addEdge(id: string, data: Edge | Edge[])
+      It adds a concrete edge in a graph network.
+    
+    - removeEdge(id: string, edgeId: number)
+      It removes a concrete edge in a graph network.
+    
+    - setBackgroundNode(id: string, nodeId: string | number, backgroundColor: string)
+      It updates a background node in a graph network for only one node.
+    
+    - resetGraph(id: string)
+      It comes back to the initial state for a graph network.
 
 - ngx-vis-network-etsisi-show-case
 
@@ -93,6 +131,7 @@ For this element we have created:
     - Show/hide links.
     - Show/hide navigation and interaction buttons.
     - Reset.
+    
   - Dynamic
   
     In this section we have options to:
@@ -101,6 +140,7 @@ For this element we have created:
       - Select elements.
       - Delete elements.
       - Reset.
+      
   - Style
     In this section we have options to:
       - Change nodes color.
@@ -139,10 +179,12 @@ You can try our show case [here](https://jrodva.github.io/ngx-vis-network-etsisi
 - Run `npm run style-lint:fix` to fix the related errors with all stylelint rules.
 
 ## Running unit tests
-`npm run test`
+Run `npm run test`
 
-## Generate documentation
+## Documentation
 Run `npm run compodoc` to generate the project documentation.
+
+Also, you can check our documentation [here](https://github.com/jrodva/ngx-vis-network-etsisi/tree/master/documentation)
 
 ## Contributing
 Please read [contributing.md](https://github.com/jrodva/ngx-vis-network-etsisi/blob/master/contributing.md) to contribute to our project.

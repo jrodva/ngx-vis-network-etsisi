@@ -313,7 +313,7 @@ export class NgxVisNetworkEtsisiService {
     return null;
   }
   /**
-   * @description It returns if the graph exists.
+   * @description It returns if a graph with a concrete id exists.
    * @param id is the graph network id.
    * @memberOf NgxVisNetworkEtsisiService
    */
@@ -349,7 +349,7 @@ export class NgxVisNetworkEtsisiService {
     }
   }
   /**
-   * @description Removes a node in a graph network.
+   * @description Removes a concrete node in a graph network.
    * @param id is the graph network id.
    * @param nodeId is the node id.
    * @throws Thrown when the graph network doesn't exist.
@@ -363,7 +363,7 @@ export class NgxVisNetworkEtsisiService {
     }
   }
   /**
-   * @description Adds an edge in a graph network.
+   * @description Adds a concrete edge in a graph network.
    * @param id is the graph network id.
    * @param data is the edge info.
    * @throws Thrown when the graph network doesn't exist.
@@ -411,7 +411,7 @@ export class NgxVisNetworkEtsisiService {
     return this.auxGraphs[id].network.getPositions(nodeIds);
   }
   /**
-   * @description It comes back to the seed state for a graph network.
+   * @description It comes back to the initial state for a graph network.
    * @param id is the graph network id.
    * @throws Thrown when the graph network doesn't exist.
    * @memberOf NgxVisNetworkEtsisiService
