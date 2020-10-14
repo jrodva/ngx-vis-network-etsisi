@@ -13,6 +13,7 @@
     "build:dev:lib": "ng build ngx-vis-network-etsisi",
     "build:dev:showcase": "ng build ngx-vis-network-etsisi-showcase",
     "test": "ng test",
+    "test:lib-coverage": "ng test ng-vis-network-etsisi --code-coverage --watch=false",
     "lint": "ng lint --format=stylish",
     "lint:fix": "ng lint --fix=true",
     "style-lint": "stylelint '{projects/**/src/**/*.scss, projects/**/src/**/**/*.scss}' --config .stylelintrc.json",
