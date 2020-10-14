@@ -61,7 +61,7 @@ To use inside a component:
      (ready)="isGraphNetworkReady()">
 </div>
 ```
-- You have to add this import to use inside a component.
+- You have to add this import statement.
 ```
 import { DataSet, Edge, NgxVisNetworkEtsisiService, Node, Options } from 'ngx-vis-network-etsisi';
 ```
@@ -69,10 +69,53 @@ import { DataSet, Edge, NgxVisNetworkEtsisiService, Node, Options } from 'ngx-vi
 ## Overall features
 We have two important elements in this project:
 - ngx-vis-network-etsisi
+For this element we have created:
+
+  - A module.
+  - A directive that is exposed for our service.
+```
+    @Input() etsisiVis: string; 
+    @Input() etsisiVisNodes: DataSet<Node>; 
+    @Input() etsisiVisEdges: DataSet<Edge>; 
+    @Input() etsisiVisOptions: Options; 
+    @Output() ready: EventEmitter<string> = new EventEmitter<string>();
+```
+  - A service that is exposed for our service.
+
 - ngx-vis-network-etsisi-show-case
+
+  For this element we have created a playroom with 3 main sections:
+  - Basic
+    
+    In this section we have options to:
+    - Show/hide labels.
+    - Show/hide icons.
+    - Show/hide links.
+    - Show/hide navigation and interaction buttons.
+    - Reset.
+  - Dynamic
+  
+    In this section we have options to:
+      - Add nodes.
+      - Add links.
+      - Select elements.
+      - Delete elements.
+      - Reset.
+  - Style
+    In this section we have options to:
+      - Change nodes color.
+      - Change borders color.
+      - Change links color.
+      - Reset.
 
 ## Building
 We have different building options.
+
+### Full building
+Just run `npm run build`
+
+### Full building on dev mode
+Just run `npm run build:dev`
 
 ### Build library
 Just run `npm run build:lib`

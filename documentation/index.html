@@ -83,16 +83,64 @@
    [etsisiVisOptions]=&quot;options&quot;
    (ready)=&quot;isGraphNetworkReady()&quot;&gt;
 &lt;/div&gt;</code></pre></div></li>
-<li>You have to add this import to use inside a component.<div><pre class="line-numbers"><code class="language-none">import { DataSet, Edge, NgxVisNetworkEtsisiService, Node, Options } from &#39;ngx-vis-network-etsisi&#39;;</code></pre></div></li>
+<li>You have to add this import statement.<div><pre class="line-numbers"><code class="language-none">import { DataSet, Edge, NgxVisNetworkEtsisiService, Node, Options } from &#39;ngx-vis-network-etsisi&#39;;</code></pre></div></li>
 </ul>
 <h2 id="overall-features">Overall features</h2>
 <p>We have two important elements in this project:</p>
 <ul>
-<li>ngx-vis-network-etsisi</li>
-<li>ngx-vis-network-etsisi-show-case</li>
+<li><p>ngx-vis-network-etsisi
+For this element we have created:</p>
+<ul>
+<li>A module.</li>
+<li>A directive that is exposed for our service.<div><pre class="line-numbers"><code class="language-none">&#64;Input() etsisiVis: string; 
+&#64;Input() etsisiVisNodes: DataSet&lt;Node&gt;; 
+&#64;Input() etsisiVisEdges: DataSet&lt;Edge&gt;; 
+&#64;Input() etsisiVisOptions: Options; 
+&#64;Output() ready: EventEmitter&lt;string&gt; = new EventEmitter&lt;string&gt;();</code></pre></div></li>
+<li>A service that is exposed for our service.</li>
+</ul>
+</li>
+<li><p>ngx-vis-network-etsisi-show-case</p>
+<p>For this element we have created a playroom with 3 main sections:</p>
+<ul>
+<li><p>Basic</p>
+<p>In this section we have options to:</p>
+<ul>
+<li>Show/hide labels.</li>
+<li>Show/hide icons.</li>
+<li>Show/hide links.</li>
+<li>Show/hide navigation and interaction buttons.</li>
+<li>Reset.</li>
+</ul>
+</li>
+<li><p>Dynamic</p>
+<p>In this section we have options to:</p>
+<ul>
+<li>Add nodes.</li>
+<li>Add links.</li>
+<li>Select elements.</li>
+<li>Delete elements.</li>
+<li>Reset.</li>
+</ul>
+</li>
+<li><p>Style
+In this section we have options to:</p>
+<ul>
+<li>Change nodes color.</li>
+<li>Change borders color.</li>
+<li>Change links color.</li>
+<li>Reset.</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <h2 id="building">Building</h2>
 <p>We have different building options.</p>
+<h3 id="full-building">Full building</h3>
+<p>Just run <code>npm run build</code></p>
+<h3 id="full-building-on-dev-mode">Full building on dev mode</h3>
+<p>Just run <code>npm run build:dev</code></p>
 <h3 id="build-library">Build library</h3>
 <p>Just run <code>npm run build:lib</code></p>
 <h3 id="build-show-case">Build show case</h3>
