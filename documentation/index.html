@@ -32,17 +32,78 @@
 
 <h1 id="ngxvisnetworketsisi">NgxVisNetworkEtsisi</h1>
 <h2 id="description">Description</h2>
-<p>Final Degree project - Implementation of Angular library using Vis Network</p>
+<p><img src="https://jrodva.github.io/ngx-vis-network-etsisi/assets/img/angularplusvis.png" alt="NgxNetworkVis" class="img-responsive"></p>
+<p>Final Degree project - Implementation of Angular library using Vis Network.</p>
+<p>The main goal of this project is get easier the use of Vis Network including an abstraction layer to different edition methods in an Angular project.</p>
 <p><a href="http://makeapullrequest.com"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome" class="img-responsive"></a>
 <a href="http://www.apache.org/licenses/"><img src="https://img.shields.io/badge/license-Apache-green.svg" alt="Apache" class="img-responsive"></a></p>
 <h2 id="table-of-contents">Table of contents</h2>
-<h2 id="overall-features">Overall features</h2>
+<ul>
+<li><a href="#getting-started">Getting Started</a><ul>
+<li><a href="#requirements">Requirements</a></li>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#configuration">Configuration</a></li>
+<li><a href="#building">Building</a></li>
+<li><a href="#show-case">Show case</a></li>
+</ul>
+</li>
+<li><a href="#overall-features">Overall features</a></li>
+<li><a href="#linting">Linting</a></li>
+<li><a href="#running-unit-tests">Running unit tests</a></li>
+<li><a href="#generate-documentation">Generate documentation</a></li>
+<li><a href="#contributing">Contributing</a></li>
+<li><a href="#license">License</a></li>
+</ul>
 <h2 id="getting-started">Getting Started</h2>
-<h2 id="requirements">Requirements</h2>
+<h3 id="requirements">Requirements</h3>
 <p>It&#39;s necessary to have installed at least Node 10.</p>
-<h2 id="showcase">Showcase</h2>
-<p>If you want to watch our showcase, you have to keep the next steps:</p>
-<h3 id="linting">Linting</h3>
+<p>Also, we need to install those dependencies:</p>
+<ul>
+<li><a href="https://www.npmjs.com/package/vis-data">Vis Data</a></li>
+<li><a href="https://www.npmjs.com/package/vis-network">Vis Network</a></li>
+<li><a href="https://www.npmjs.com/package/vis-util">Vis Util</a></li>
+</ul>
+<h3 id="installation">Installation</h3>
+<p>Just run npm -i ngx-vis-network-etsisi`</p>
+<h3 id="configuration">Configuration</h3>
+<p>You need to import the module NgxVisNetworkEtsisiModule.</p>
+<div><pre class="line-numbers"><code class="language-none">import { NgxVisNetworkEtsisiModule } from &#39;ngx-vis-network-etsisi&#39;;
+
+ &#64;NgModule({
+   ...
+   imports: [NgxVisNetworkEtsisiModule, ...],
+   ... 
+ })
+  ...</code></pre></div><p>To use inside a component:</p>
+<ul>
+<li>You have to add this directive.<div><pre class="line-numbers"><code class="language-none">&lt;div class=&quot;graph-network&quot;
+   [etsisiVis]=&quot;id&quot;
+   [etsisiVisNodes]=&quot;nodes&quot;
+   [etsisiVisEdges]=&quot;edges&quot;
+   [etsisiVisOptions]=&quot;options&quot;
+   (ready)=&quot;isGraphNetworkReady()&quot;&gt;
+&lt;/div&gt;</code></pre></div></li>
+<li>You have to add this import to use inside a component.<div><pre class="line-numbers"><code class="language-none">import { DataSet, Edge, NgxVisNetworkEtsisiService, Node, Options } from &#39;ngx-vis-network-etsisi&#39;;</code></pre></div></li>
+</ul>
+<h2 id="overall-features">Overall features</h2>
+<p>We have two important elements in this project:</p>
+<ul>
+<li>ngx-vis-network-etsisi</li>
+<li>ngx-vis-network-etsisi-show-case</li>
+</ul>
+<h2 id="building">Building</h2>
+<p>We have different building options.</p>
+<h3 id="build-library">Build library</h3>
+<p>Just run <code>npm run build:lib</code></p>
+<h3 id="build-show-case">Build show case</h3>
+<p>Just run <code>npm run build:showcase</code></p>
+<h3 id="build-library-on-dev-mode">Build library on dev mode</h3>
+<p>Just run <code>npm run build:lib:dev</code></p>
+<h3 id="build-show-case-on-dev-mode">Build show case on dev mode</h3>
+<p>Just run <code>npm run build:showcase:dev</code></p>
+<h3 id="show-case">Show case</h3>
+<p>You can try our show case <a href="https://jrodva.github.io/ngx-vis-network-etsisi/">here</a></p>
+<h2 id="linting">Linting</h2>
 <ul>
 <li>Run <code>npm run lint</code> to check all tslint rules.</li>
 <li>Run <code>npm run lint:fix</code> to fix the related errors with all tslint rules.</li>
@@ -54,7 +115,7 @@
 <h2 id="generate-documentation">Generate documentation</h2>
 <p>Run <code>npm run compodoc</code> to generate the project documentation.</p>
 <h2 id="contributing">Contributing</h2>
-<p>Please read</p>
+<p>Please read <a href="https://github.com/jrodva/ngx-vis-network-etsisi/blob/master/contributing.md">contributing.md</a> to contribute to our project.</p>
 <h2 id="license">License</h2>
 <p>This project is licensed under the Apache 2.0 License - see the <a href="LICENSE">LICENSE</a> file for details.</p>
 
