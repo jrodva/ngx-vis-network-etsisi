@@ -105,6 +105,9 @@
     "vis-data": "^6.3.3",
     "vis-util": "^4.0.0"
   },
+  "engines": {
+    "node": ">= 10.18.0"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
