@@ -35,9 +35,94 @@
 <p>Overall:</p>
 <p>At this repository, we have 2 important projects:</p>
 <ul>
-<li><p>ngx-vis-network-etsisi</p>
+<li>ngx-vis-network-etsisi</li>
+</ul>
+<p>For this element we have created:</p>
+<ul>
+<li><p>A module.</p>
 </li>
-<li><p>ngx-vis-network-etsisi-showcase</p>
+<li><p>A directive that is exposed for our service.</p>
+<div><pre class="line-numbers"><code class="language-none">&#64;Input() etsisiVis: string; 
+&#64;Input() etsisiVisNodes: DataSet&lt;Node&gt;; 
+&#64;Input() etsisiVisEdges: DataSet&lt;Edge&gt;; 
+&#64;Input() etsisiVisOptions: Options; 
+&#64;Output() ready: EventEmitter&lt;string&gt; = new EventEmitter&lt;string&gt;();</code></pre></div></li>
+<li><p>A service that is exposed for our module.</p>
+<p>We have included some new methods:</p>
+<ul>
+<li><p>create(container: HTMLElement, id: string, nodes: DataSet<Node>, edges: DataSet<Edge>, options?: Options)</p>
+<p>It creates a graph with the chosen configuration.</p>
+</li>
+<li><p>getNodesCount(id: string): number</p>
+<p>It gets the number of nodes for a graph with a concrete id.</p>
+</li>
+<li><p>getNodes(id: string): DataSet<Node> | null</p>
+<p>It gets the nodes for a graph with a concrete id.</p>
+</li>
+<li><p>getEdges(id: string): DataSet<Edge> | null</p>
+<p>It gets the edges for a graph with a concrete id.</p>
+</li>
+<li><p>isAnExistingGraphNetwork(id: string): boolean</p>
+<p>It returns if a graph with a concrete id exists.</p>
+</li>
+<li><p>addNode(id: string, data: Node | Node[])</p>
+<p>It adds a node in a concrete graph network.</p>
+</li>
+<li><p>updateNode(id: string, data: Node | Node[])</p>
+<p>It updates a node in a graph network.</p>
+</li>
+<li><p>removeNode(id: string, nodeId: number)</p>
+<p>It removes a concrete node in a graph network.</p>
+</li>
+<li><p>addEdge(id: string, data: Edge | Edge[])</p>
+<p>It adds a concrete edge in a graph network.</p>
+</li>
+<li><p>removeEdge(id: string, edgeId: number)</p>
+<p>It removes a concrete edge in a graph network.</p>
+</li>
+<li><p>setBackgroundNode(id: string, nodeId: string | number, backgroundColor: string)</p>
+<p>It updates a background node in a graph network for only one node.</p>
+</li>
+<li><p>resetGraph(id: string)</p>
+<p>It comes back to the initial state for a graph network.</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>ngx-vis-network-etsisi-show-case</p>
+<p>For this element we have created a playroom with 3 main sections:</p>
+<ul>
+<li><p>Basic</p>
+<p>In this section we have options to:</p>
+<ul>
+<li>Show/hide labels.</li>
+<li>Show/hide icons.</li>
+<li>Show/hide links.</li>
+<li>Show/hide navigation and interaction buttons.</li>
+<li>Reset.</li>
+</ul>
+</li>
+<li><p>Dynamic</p>
+<p>In this section we have options to:</p>
+<ul>
+<li>Add nodes.</li>
+<li>Add links.</li>
+<li>Select elements.</li>
+<li>Delete elements.</li>
+<li>Reset.</li>
+</ul>
+</li>
+<li><p>Style
+In this section we have options to:</p>
+<ul>
+<li>Change nodes color.</li>
+<li>Change borders color.</li>
+<li>Change links color.</li>
+<li>Reset.</li>
+</ul>
+</li>
+</ul>
 </li>
 </ul>
 
