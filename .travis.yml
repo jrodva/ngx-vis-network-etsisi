@@ -33,7 +33,7 @@ jobs:
       deploy:
         provider: pages
         skip_cleanup: true
-        github_token: $GH_TOKEN
+        github_token: ${{ secrets.GH_TOKEN }}
         local_dir: dist/ngx-vis-network-etsisi
       if: branch = master
     - stage: build & publish lib
