@@ -1,6 +1,6 @@
 {
   "name": "ngx-vis-network-etsisi",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "peerDependencies": {
     "@angular/common": "^8.2.14",
     "@angular/core": "^8.2.14"
