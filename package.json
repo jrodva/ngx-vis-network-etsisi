@@ -1,6 +1,6 @@
 {
   "name": "ngx-vis-network-etsisi",
-  "version": "0.0.1",
+  "version": "0.0.0-development",
   "scripts": {
     "ng": "ng",
     "start": "run-s lint style-lint serve",
@@ -13,7 +13,8 @@
     "build:dev:lib": "ng build ngx-vis-network-etsisi",
     "build:dev:showcase": "ng build ngx-vis-network-etsisi-showcase",
     "test": "ng test",
-    "test:lib-coverage": "ng test ng-vis-network-etsisi --code-coverage --watch=false",
+    "test:lib-coverage": "ng test ngx-vis-network-etsisi --code-coverage --watch=false",
+    "report-coverage:lib": "cat ./coverage/ngx-vis-network-etsisi/lcov.info | codecov",
     "lint": "ng lint --format=stylish",
     "lint:fix": "ng lint --fix=true",
     "style-lint": "stylelint '{projects/**/src/**/*.scss, projects/**/src/**/**/*.scss}' --config .stylelintrc.json",
@@ -21,7 +22,11 @@
     "format:check": "prettier --list-different 'projects/**/*.ts'",
     "format:write": "prettier --write 'projects/**/*.ts'",
     "e2e": "ng e2e",
-    "compodoc": "./node_modules/.bin/compodoc -p projects/ngx-vis-network-etsisi/tsconfig.lib.json"
+    "compodoc": "./node_modules/.bin/compodoc -p projects/ngx-vis-network-etsisi/tsconfig.lib.json",
+    "adjust-version": "npm-run-all adjust-version:*",
+    "adjust-version:lib": "rjp projects/ngx-vis-network-etsisi/package.json version $VERSION",
+    "adjust-version:main": "rjp package.json version $VERSION",
+    "publish:lib": "semantic-release"
   },
   "files": [
     "./dist/ngx-vis-network-etsisi/**/*"
@@ -61,7 +66,7 @@
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
-    "codecov": "^3.6.1",
+    "codecov": "^3.8.0",
     "codelyzer": "^5.2.1",
     "copyfiles": "^2.1.1",
     "husky": "^4.0.6",
@@ -79,6 +84,7 @@
     "npm-run-all": "^4.1.5",
     "prettier": "^1.19.1",
     "protractor": "^7.0.0",
+    "semantic-release": "^17.2.1",
     "stylelint": "^13.6.1",
     "stylelint-config-standard": "^19.0.0",
     "stylelint-declaration-use-variable": "^1.7.2",
@@ -87,9 +93,9 @@
     "tsickle": "^0.37.0",
     "tslint": "~5.20.1",
     "typescript": "~3.5.3",
+    "uuid": "^7.0.0",
     "vis-data": "^6.3.3",
-    "vis-util": "^4.0.0",
-    "uuid": "^7.0.0"
+    "vis-util": "^4.0.0"
   },
   "husky": {
     "hooks": {
@@ -104,7 +110,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jrodva/ngx-vis-network-etsisi.git"
+    "url": "https://github.com/jrodva/ngx-vis-network-etsisi.git"
   },
   "keywords": [
     "vis",
