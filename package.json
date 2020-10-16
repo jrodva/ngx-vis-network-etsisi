@@ -1,13 +1,14 @@
 {
   "name": "ngx-vis-network-etsisi",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "scripts": {
     "ng": "ng",
     "start": "run-s lint style-lint serve",
     "serve": "ng serve",
     "build": "run-s build:lib build:showcase",
+    "copy:license": "copyfiles ./LICENSE ./dist/ngx-vis-network-etsisi",
     "copy:readme": "copyfiles ./README.md ./dist/ngx-vis-network-etsisi",
-    "build:lib": "ng build ngx-vis-network-etsisi && npm run copy:readme",
+    "build:lib": "ng build ngx-vis-network-etsisi && npm run copy:readme && npm run copy:license",
     "build:showcase": "ng build --configuration=production ngx-vis-network-etsisi-showcase --baseHref=https://jrodva.github.io/ngx-vis-network-etsisi/ --deploy-url=https://jrodva.github.io/ngx-vis-network-etsisi/",
     "build:dev": "run-s build:dev:lib build:dev:showcase",
     "build:dev:lib": "ng build ngx-vis-network-etsisi",
