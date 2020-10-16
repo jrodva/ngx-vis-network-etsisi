@@ -1,8 +1,32 @@
 {
   "name": "ngx-vis-network-etsisi",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "peerDependencies": {
     "@angular/common": "^8.2.14",
     "@angular/core": "^8.2.14"
-  }
+  },
+  "engines": {
+    "node": ">= 10.18.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jrodva/ngx-vis-network-etsisi.git"
+  },
+  "keywords": [
+    "vis",
+    "vis-network",
+    "ngx-vis",
+    "angular",
+    "graph",
+    "ngx"
+  ],
+  "author": "Jonathan Rodríguez Vaca <jrodva>",
+  "license": "Apache-2.0",
+  "contributors": [
+    "Jonathan Rodríguez Vaca <jrodva>"
+  ],
+  "bugs": {
+    "url": "https://github.com/jrodva/ngx-vis-network-etsisi/issues"
+  },
+  "homepage": "https://github.com/jrodva/ngx-vis-network-etsisi#readme"
 }
