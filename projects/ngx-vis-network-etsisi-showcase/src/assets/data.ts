@@ -78,12 +78,12 @@ export const graphNetworkNodes = [
   {
     level: 0,
     id: 5,
-    label: 'Ingeniero',
+    label: 'Engineer',
     ...commonEngineer
   },
   {
     id: 4,
-    label: 'Código',
+    label: 'Code',
     level: 2,
     ...commonNode,
     ...nodeData,
@@ -100,7 +100,7 @@ export const graphNetworkNodes = [
   },
   {
     id: 1,
-    label: 'Bloqueo',
+    label: 'Blocking',
     level: 6,
     ...commonNode,
     ...nodeData,
@@ -108,7 +108,7 @@ export const graphNetworkNodes = [
   },
   {
     id: 2,
-    label: 'Teléfono',
+    label: 'Phone',
     level: 6,
     ...commonNode,
     ...nodeData,
@@ -116,7 +116,7 @@ export const graphNetworkNodes = [
   },
   {
     id: 3,
-    label: 'Copia',
+    label: 'Copy',
     level: 6,
     ...commonNode,
     ...nodeData,
@@ -124,7 +124,7 @@ export const graphNetworkNodes = [
   },
   {
     id: 6,
-    label: 'Micrófono',
+    label: 'Microphone',
     level: 6,
     ...commonNode,
     ...nodeData,
@@ -132,7 +132,7 @@ export const graphNetworkNodes = [
   },
   {
     id: 7,
-    label: 'Grabación',
+    label: 'Recording',
     level: 6,
     ...commonNode,
     ...nodeData,

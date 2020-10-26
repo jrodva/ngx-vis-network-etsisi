@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.0.4
+ - We have changed the show case language.
+ - We are updating the readme document to show it correctly on npmjs.
+
 ## v1.0.3
 
 Overall:
