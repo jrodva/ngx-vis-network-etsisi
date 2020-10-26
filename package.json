@@ -1,6 +1,6 @@
 {
   "name": "ngx-vis-network-etsisi",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "scripts": {
     "ng": "ng",
     "start": "run-s lint style-lint serve",
