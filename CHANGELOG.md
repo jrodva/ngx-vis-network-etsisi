@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.0.6
+- We have changing the control language for the show case.
+- We have fixing the publishing issue.
+
 ## v1.0.5
 - We have resized the library image at readme document.
 - We have packaging again for previous errors in the publishing process.

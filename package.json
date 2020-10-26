@@ -1,6 +1,6 @@
 {
   "name": "ngx-vis-network-etsisi",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "scripts": {
     "ng": "ng",
     "start": "run-s lint style-lint serve",
@@ -27,6 +27,7 @@
     "adjust-version": "npm-run-all adjust-version:*",
     "adjust-version:lib": "rjp projects/ngx-vis-network-etsisi/package.json version $VERSION",
     "adjust-version:main": "rjp package.json version $VERSION",
+    "build:publish": "build && cd dist/ngx-vis-network-etsisi && npm publish",
     "publish:lib": "semantic-release",
     "publish:showcase": "npx angular-cli-ghpages --dir=./dist/ngx-vis-network-etsisi",
     "semantic-release": "semantic-release"
