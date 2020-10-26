@@ -4,7 +4,7 @@
 Final Degree project - Implementation of Angular library using Vis Network.
 The main goal of this project is get easier the use of Vis Network including an abstraction layer to different edition methods in an Angular project.
 
-![NgxNetworkVis](https://jrodva.github.io/ngx-vis-network-etsisi/assets/img/angularplusvis.png)
+<img src="https://jrodva.github.io/ngx-vis-network-etsisi/assets/img/angularplusvis.png" width="300"/>
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 [![Apache](https://img.shields.io/badge/license-Apache-green.svg)](http://www.apache.org/licenses/)

@@ -1,11 +1,14 @@
 # Changelog
 
+## v1.0.5
+- We have resized the library image at readme document.
+- We have packaging again for previous errors in the publishing process.
+
 ## v1.0.4
  - We have changed the show case language.
- - We are updating the readme document to show it correctly on npmjs.
+ - We are updating the readme document to show it correctly on NpmJS.
 
 ## v1.0.3
-
 Overall:
 
 At this repository, we have 2 important projects:
